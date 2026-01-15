@@ -1,7 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
 import { Facebook, Instagram, Phone, MapPin, Clock } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import logoImage from "@assets/yalla_amigo_1768485163738.PNG";
+import logoImage from "@assets/yalla_amigo-removebg-preview_1768486710592.png";
 
 export function Footer() {
   const { t, language } = useLanguage();
@@ -21,7 +21,7 @@ export function Footer() {
             <img
               src={logoImage}
               alt="Yalla Amigo"
-              className="h-20 w-auto mb-4 brightness-0 invert"
+              className="h-20 w-auto mb-4"
               data-testid="img-footer-logo"
             />
             <p className="text-background/70 text-sm leading-relaxed" data-testid="text-footer-tagline">

@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import heroImage from "@assets/stock_images/mediterranean_restau_3ba79df5.jpg";
-import logoImage from "@assets/yalla_amigo_1768485163738.PNG";
+import logoImage from "@assets/yalla_amigo-removebg-preview_1768486710592.png";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -50,7 +50,7 @@ export function Hero() {
           <img
             src={logoImage}
             alt="Yalla Amigo Logo"
-            className="h-32 md:h-40 lg:h-48 mx-auto drop-shadow-2xl brightness-0 invert"
+            className="h-32 md:h-40 lg:h-48 mx-auto drop-shadow-2xl"
             data-testid="img-hero-logo"
           />
         </motion.div>
