@@ -5,20 +5,20 @@ import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 
-import shawarma1 from "@assets/stock_images/shawarma_wrap_middle_ce6a63b6.jpg";
-import shawarma2 from "@assets/stock_images/shawarma_wrap_middle_9b7c859b.jpg";
-import falafel1 from "@assets/stock_images/falafel_plate_medite_962e0dd7.jpg";
-import hummus1 from "@assets/stock_images/hummus_appetizer_mid_da2ec780.jpg";
-import kebab1 from "@assets/stock_images/grilled_meat_kebab_s_a205dca6.jpg";
-import salad1 from "@assets/stock_images/fresh_salad_mediterr_9c126eeb.jpg";
+import img1 from "@assets/IMG_8322_1768500457192.jpeg";
+import img2 from "@assets/IMG_8325_1768500457192.jpeg";
+import img3 from "@assets/IMG_8324_1768500457193.jpeg";
+import img4 from "@assets/IMG_8327_1768500457193.jpeg";
+import img5 from "@assets/IMG_8326_1768500457192.jpeg";
+import img6 from "@assets/IMG_8328_1768500457193.jpeg";
 
 const instagramImages = [
-  { src: shawarma1, alt: "Shawarma" },
-  { src: falafel1, alt: "Falafel" },
-  { src: hummus1, alt: "Hummus" },
-  { src: kebab1, alt: "Kebab" },
-  { src: salad1, alt: "Salad" },
-  { src: shawarma2, alt: "Shawarma Wrap" },
+  { src: img1, alt: "Chef preparing shawarma" },
+  { src: img2, alt: "Falafel with tahini" },
+  { src: img3, alt: "Pita sandwiches" },
+  { src: img4, alt: "Palestinian cuisine spread" },
+  { src: img5, alt: "Customer enjoying food" },
+  { src: img6, alt: "Anniversary celebration" },
 ];
 
 // Set to true and add your embed code when you have one from EmbedSocial
