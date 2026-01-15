@@ -50,7 +50,7 @@ export function Hero() {
           <img
             src={logoImage}
             alt="Yalla Amigo Logo"
-            className="h-32 md:h-40 lg:h-48 mx-auto drop-shadow-2xl"
+            className="h-32 md:h-40 lg:h-48 mx-auto drop-shadow-2xl brightness-0 invert"
             data-testid="img-hero-logo"
           />
         </motion.div>

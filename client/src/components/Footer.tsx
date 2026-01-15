@@ -21,7 +21,7 @@ export function Footer() {
             <img
               src={logoImage}
               alt="Yalla Amigo"
-              className="h-20 w-auto mb-4"
+              className="h-20 w-auto mb-4 brightness-0 invert"
               data-testid="img-footer-logo"
             />
             <p className="text-background/70 text-sm leading-relaxed" data-testid="text-footer-tagline">
