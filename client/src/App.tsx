@@ -11,15 +11,13 @@ import { ReviewsSection } from "@/components/ReviewsSection";
 import { OrderSection } from "@/components/OrderSection";
 import { Footer } from "@/components/Footer";
 import { FloatingOrderButton } from "@/components/FloatingOrderButton";
-import { FloatingElements } from "@/components/FloatingElements";
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <LanguageProvider>
-          <div className="min-h-screen bg-background relative">
-            <FloatingElements />
+          <div className="min-h-screen bg-background">
             <Header />
             <main>
               <Hero />

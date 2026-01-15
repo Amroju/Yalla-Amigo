@@ -466,6 +466,26 @@ const menuItems: MenuItem[] = [
     image: salad1,
     category: "bevande",
   },
+  {
+    id: "42",
+    nameEn: "Coffee",
+    nameIt: "Caffè",
+    descriptionEn: "Espresso coffee",
+    descriptionIt: "Caffè espresso",
+    price: "€1.00",
+    image: baklava,
+    category: "bevande",
+  },
+  {
+    id: "43",
+    nameEn: "Tea/Mint",
+    nameIt: "Thè/Menta",
+    descriptionEn: "Hot tea with fresh mint",
+    descriptionIt: "Tè caldo con menta fresca",
+    price: "€2.00",
+    image: pita,
+    category: "bevande",
+  },
 ];
 
 interface MenuCardProps {
@@ -536,7 +556,7 @@ export function MenuSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const categories = [
-    { key: "sandwiches", labelEn: "Sandwiches", labelIt: "Panini", noteEn: "+€0.50 for wrap", noteIt: "+€0,50 per la piadina" },
+    { key: "sandwiches", labelEn: "Sandwiches", labelIt: "Panini", noteEn: "+€0.50 for wrap", noteIt: "+€0,50 per il wrap" },
     { key: "piattiUnici", labelEn: "Main Plates", labelIt: "Piatti Unici" },
     { key: "piattiTipici", labelEn: "Traditional Dishes", labelIt: "Piatti Tipici" },
     { key: "insalate", labelEn: "Salads", labelIt: "Insalate" },
