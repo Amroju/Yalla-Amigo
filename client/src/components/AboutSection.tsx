@@ -43,10 +43,16 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4">
+          <h2 
+            className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4"
+            data-testid="text-about-title"
+          >
             {t("about.title")}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p 
+            className="text-muted-foreground text-lg max-w-2xl mx-auto"
+            data-testid="text-about-subtitle"
+          >
             {t("about.subtitle")}
           </p>
         </motion.div>
@@ -57,6 +63,7 @@ export function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative h-[300px] md:h-[400px] lg:h-full min-h-[300px] rounded-md overflow-hidden shadow-lg"
+            data-testid="container-google-maps"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.1234567890123!2d9.188540315511234!3d45.464211179101234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzUxLjIiTiA5wrAxMScxOC43IkU!5e0!3m2!1sen!2sit!4v1234567890123!5m2!1sen!2sit"
@@ -68,6 +75,7 @@ export function AboutSection() {
               referrerPolicy="no-referrer-when-downgrade"
               title="Yalla Amigo Location"
               className="absolute inset-0"
+              data-testid="iframe-google-maps"
             />
           </motion.div>
 
@@ -77,15 +85,23 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-6"
           >
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden" data-testid="card-address">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-md">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">{t("about.address")}</h3>
-                    <p className="text-muted-foreground">
+                    <h3 
+                      className="font-semibold text-lg mb-2"
+                      data-testid="text-address-title"
+                    >
+                      {t("about.address")}
+                    </h3>
+                    <p 
+                      className="text-muted-foreground"
+                      data-testid="text-address-content"
+                    >
                       Via Example 123<br />
                       20100 Milano, Italia
                     </p>
@@ -94,17 +110,22 @@ export function AboutSection() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden" data-testid="card-phone">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-md">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">{t("about.phone")}</h3>
+                    <h3 
+                      className="font-semibold text-lg mb-2"
+                      data-testid="text-phone-title"
+                    >
+                      {t("about.phone")}
+                    </h3>
                     <a
                       href="tel:+39021234567"
-                      className="text-primary hover:underline text-lg font-medium"
+                      className="text-primary text-lg font-medium"
                       data-testid="link-phone"
                     >
                       +39 02 123 4567
@@ -114,19 +135,25 @@ export function AboutSection() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden" data-testid="card-hours">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-md shrink-0">
                     <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-lg mb-4">{t("about.hours")}</h3>
-                    <div className="space-y-2">
+                    <h3 
+                      className="font-semibold text-lg mb-4"
+                      data-testid="text-hours-title"
+                    >
+                      {t("about.hours")}
+                    </h3>
+                    <div className="space-y-2" data-testid="list-opening-hours">
                       {hours.map((schedule, index) => (
                         <div
                           key={index}
                           className="flex justify-between items-center py-1 border-b border-border/50 last:border-0"
+                          data-testid={`row-hours-${index}`}
                         >
                           <span className="text-muted-foreground">{schedule.day}</span>
                           <span

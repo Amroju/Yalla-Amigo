@@ -181,13 +181,15 @@ function MenuCard({ item, index, language }: MenuCardProps) {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      data-testid={`card-menu-item-${item.id}`}
     >
-      <Card className="group overflow-hidden hover-elevate cursor-pointer h-full">
+      <Card className="overflow-hidden cursor-pointer h-full">
         <div className="relative aspect-[4/3] overflow-hidden">
           <img
             src={item.image}
             alt={language === "en" ? item.nameEn : item.nameIt}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover"
+            data-testid={`img-menu-item-${item.id}`}
           />
           {item.popular && (
             <Badge
@@ -197,13 +199,18 @@ function MenuCard({ item, index, language }: MenuCardProps) {
               Popular
             </Badge>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
         <CardContent className="p-4">
-          <h3 className="font-serif text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+          <h3 
+            className="font-serif text-lg font-semibold mb-2 text-foreground"
+            data-testid={`text-menu-item-name-${item.id}`}
+          >
             {language === "en" ? item.nameEn : item.nameIt}
           </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
+          <p 
+            className="text-muted-foreground text-sm leading-relaxed"
+            data-testid={`text-menu-item-description-${item.id}`}
+          >
             {language === "en" ? item.descriptionEn : item.descriptionIt}
           </p>
         </CardContent>
@@ -235,10 +242,16 @@ export function MenuSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4">
+          <h2 
+            className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4"
+            data-testid="text-menu-title"
+          >
             {t("menu.title")}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p 
+            className="text-muted-foreground text-lg max-w-2xl mx-auto"
+            data-testid="text-menu-subtitle"
+          >
             {t("menu.subtitle")}
           </p>
         </motion.div>

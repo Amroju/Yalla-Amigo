@@ -30,6 +30,7 @@ export function OrderSection() {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl md:text-5xl font-serif font-bold text-primary-foreground mb-4"
+            data-testid="text-order-title"
           >
             {t("order.cta")}
           </motion.h2>
@@ -38,6 +39,7 @@ export function OrderSection() {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-primary-foreground/80 text-lg mb-8"
+            data-testid="text-order-description"
           >
             {t("order.description")}
           </motion.p>
@@ -53,8 +55,8 @@ export function OrderSection() {
             >
               <Button
                 size="lg"
-                variant="secondary"
-                className="text-lg px-8 py-6 font-semibold"
+                variant="outline"
+                className="bg-white/10 backdrop-blur-sm border-white/30 text-white font-semibold"
                 data-testid="button-order-glovo-section"
               >
                 <span>{t("order.button")}</span>

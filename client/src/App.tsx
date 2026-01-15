@@ -10,6 +10,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { OrderSection } from "@/components/OrderSection";
 import { Footer } from "@/components/Footer";
+import { FloatingOrderButton } from "@/components/FloatingOrderButton";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <OrderSection />
             </main>
             <Footer />
+            <FloatingOrderButton />
           </div>
         </LanguageProvider>
         <Toaster />

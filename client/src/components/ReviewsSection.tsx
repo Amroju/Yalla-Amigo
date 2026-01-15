@@ -96,20 +96,27 @@ function ReviewCard({ review, index, language }: ReviewCardProps) {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      data-testid={`card-review-${review.id}`}
     >
-      <Card className="h-full hover-elevate">
+      <Card className="h-full">
         <CardContent className="p-6">
           <div className="flex items-start gap-4 mb-4">
-            <Avatar className="h-12 w-12 bg-primary/10">
+            <Avatar className="h-12 w-12 bg-primary/10" data-testid={`avatar-reviewer-${review.id}`}>
               <AvatarFallback className="bg-primary/10 text-primary font-semibold">
                 {review.initials}
               </AvatarFallback>
             </Avatar>
             <div className="flex-1">
-              <h4 className="font-semibold text-foreground">
+              <h4 
+                className="font-semibold text-foreground"
+                data-testid={`text-reviewer-name-${review.id}`}
+              >
                 {language === "en" ? review.nameEn : review.nameIt}
               </h4>
-              <div className="flex items-center gap-1 mt-1">
+              <div 
+                className="flex items-center gap-1 mt-1"
+                data-testid={`rating-stars-${review.id}`}
+              >
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
@@ -124,7 +131,10 @@ function ReviewCard({ review, index, language }: ReviewCardProps) {
             </div>
             <Quote className="h-8 w-8 text-primary/20" />
           </div>
-          <p className="text-muted-foreground leading-relaxed italic">
+          <p 
+            className="text-muted-foreground leading-relaxed italic"
+            data-testid={`text-review-content-${review.id}`}
+          >
             "{language === "en" ? review.reviewEn : review.reviewIt}"
           </p>
         </CardContent>
@@ -148,13 +158,22 @@ export function ReviewsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4">
+          <h2 
+            className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4"
+            data-testid="text-reviews-title"
+          >
             {t("reviews.title")}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p 
+            className="text-muted-foreground text-lg max-w-2xl mx-auto"
+            data-testid="text-reviews-subtitle"
+          >
             {t("reviews.subtitle")}
           </p>
-          <div className="flex items-center justify-center gap-2 mt-4">
+          <div 
+            className="flex items-center justify-center gap-2 mt-4"
+            data-testid="rating-google-overall"
+          >
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-5 w-5 text-yellow-500 fill-yellow-500" />

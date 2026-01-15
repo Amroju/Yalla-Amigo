@@ -22,8 +22,9 @@ export function Footer() {
               src={logoImage}
               alt="Yalla Amigo"
               className="h-20 w-auto mb-4"
+              data-testid="img-footer-logo"
             />
-            <p className="text-background/70 text-sm leading-relaxed">
+            <p className="text-background/70 text-sm leading-relaxed" data-testid="text-footer-tagline">
               {t("footer.tagline")}
             </p>
             <div className="flex gap-4 mt-6">
@@ -31,7 +32,7 @@ export function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-background/10 rounded-md hover:bg-background/20 transition-colors"
+                className="p-2 bg-background/10 rounded-md transition-colors"
                 data-testid="link-facebook"
                 aria-label="Facebook"
               >
@@ -41,7 +42,7 @@ export function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-background/10 rounded-md hover:bg-background/20 transition-colors"
+                className="p-2 bg-background/10 rounded-md transition-colors"
                 data-testid="link-instagram"
                 aria-label="Instagram"
               >
@@ -51,7 +52,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-lg mb-4">{t("footer.quickLinks")}</h4>
+            <h4 className="font-semibold text-lg mb-4" data-testid="text-footer-quicklinks-title">{t("footer.quickLinks")}</h4>
             <nav className="space-y-3">
               {quickLinks.map((link) => (
                 <ScrollLink
@@ -60,7 +61,7 @@ export function Footer() {
                   smooth={true}
                   duration={500}
                   offset={-80}
-                  className="block text-background/70 hover:text-background cursor-pointer transition-colors"
+                  className="block text-background/70 cursor-pointer transition-colors"
                   data-testid={`link-footer-${link.to}`}
                 >
                   {t(link.key)}
@@ -70,11 +71,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-lg mb-4">{t("footer.contact")}</h4>
+            <h4 className="font-semibold text-lg mb-4" data-testid="text-footer-contact-title">{t("footer.contact")}</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-background/70 text-sm">
+                <p className="text-background/70 text-sm" data-testid="text-footer-address">
                   Via Example 123<br />
                   20100 Milano, Italia
                 </p>
@@ -83,7 +84,8 @@ export function Footer() {
                 <Phone className="h-5 w-5 text-primary shrink-0" />
                 <a
                   href="tel:+39021234567"
-                  className="text-background/70 hover:text-background transition-colors text-sm"
+                  className="text-background/70 transition-colors text-sm"
+                  data-testid="link-footer-phone"
                 >
                   +39 02 123 4567
                 </a>
@@ -92,21 +94,21 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-lg mb-4">{t("footer.hours")}</h4>
+            <h4 className="font-semibold text-lg mb-4" data-testid="text-footer-hours-title">{t("footer.hours")}</h4>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-primary shrink-0" />
-                <span className="text-background/70">
+                <span className="text-background/70" data-testid="text-hours-weekday">
                   {language === "en" ? "Mon - Thu" : "Lun - Gio"}: 11:00 - 22:00
                 </span>
               </div>
               <div className="flex items-center gap-2 pl-6">
-                <span className="text-background/70">
+                <span className="text-background/70" data-testid="text-hours-weekend">
                   {language === "en" ? "Fri - Sat" : "Ven - Sab"}: 11:00 - 23:00
                 </span>
               </div>
               <div className="flex items-center gap-2 pl-6">
-                <span className="text-background/70">
+                <span className="text-background/70" data-testid="text-hours-sunday">
                   {language === "en" ? "Sunday" : "Domenica"}: {t("about.closed")}
                 </span>
               </div>
@@ -115,7 +117,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-background/10 mt-10 pt-8 text-center">
-          <p className="text-background/50 text-sm">
+          <p className="text-background/50 text-sm" data-testid="text-footer-copyright">
             © {new Date().getFullYear()} Yalla Amigo. {t("footer.rights")}.
           </p>
         </div>

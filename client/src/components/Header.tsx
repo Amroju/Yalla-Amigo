@@ -54,6 +54,7 @@ export function Header() {
               src={logoImage}
               alt="Yalla Amigo"
               className="h-12 md:h-14 w-auto"
+              data-testid="img-logo"
             />
           </ScrollLink>
 
@@ -65,11 +66,10 @@ export function Header() {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="text-foreground/80 hover:text-foreground font-medium cursor-pointer transition-colors relative group"
+                className="text-foreground/80 font-medium cursor-pointer transition-colors"
                 data-testid={`link-${item.to}`}
               >
                 {t(item.key)}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </ScrollLink>
             ))}
           </div>
@@ -87,7 +87,6 @@ export function Header() {
             </Button>
             <ScrollLink to="order" smooth={true} duration={500} offset={-80}>
               <Button
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
                 data-testid="button-order-header"
               >
                 {t("nav.order")}
@@ -133,7 +132,7 @@ export function Header() {
                     duration={500}
                     offset={-80}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-4 py-3 text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
+                    className="block px-4 py-3 text-foreground/80 transition-colors cursor-pointer"
                     data-testid={`link-mobile-${item.to}`}
                   >
                     {t(item.key)}
@@ -142,7 +141,7 @@ export function Header() {
                 <div className="px-4 pt-2">
                   <ScrollLink to="order" smooth={true} duration={500} offset={-80}>
                     <Button
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                      className="w-full"
                       onClick={() => setIsMobileMenuOpen(false)}
                       data-testid="button-order-mobile"
                     >
