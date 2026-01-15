@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
+import { OrderFloatingElements } from "@/components/FloatingElements";
 
 export function OrderSection() {
   const { t } = useLanguage();
@@ -16,6 +17,7 @@ export function OrderSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_white_0%,_transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,_white_0%,_transparent_40%)]" />
       </div>
+      <OrderFloatingElements />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <motion.div

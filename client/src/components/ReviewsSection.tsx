@@ -5,6 +5,7 @@ import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/lib/LanguageContext";
+import { ReviewsFloatingElements } from "@/components/FloatingElements";
 
 interface Review {
   id: string;
@@ -142,7 +143,8 @@ export function ReviewsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-background">
+    <section id="reviews" className="py-16 md:py-24 bg-background relative overflow-hidden">
+      <ReviewsFloatingElements />
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           ref={ref}

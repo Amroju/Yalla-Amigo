@@ -4,6 +4,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
+import { HeroFloatingElements } from "@/components/FloatingElements";
 import heroImage from "@assets/IMG_8313_1768487989358.jpeg";
 
 export function Hero() {
@@ -116,6 +117,8 @@ export function Hero() {
           </a>
         </motion.div>
       </motion.div>
+
+      <HeroFloatingElements />
 
       <motion.div
         initial={{ opacity: 0 }}
