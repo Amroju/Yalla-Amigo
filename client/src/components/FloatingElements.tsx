@@ -158,41 +158,20 @@ function Spice({ size = 24, color = "#5BA240", opacity = 0.35 }: { size?: number
 export function HeroFloatingElements() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-5">
-      <FloatingElement delay={0} duration={6} x={15} y={20} className="top-[10%] left-[5%]">
-        <Star size={32} color="#D62027" opacity={0.5} />
+      <FloatingElement delay={0} duration={6} x={15} y={20} className="top-[15%] left-[5%]">
+        <Star size={28} color="#D62027" opacity={0.4} />
       </FloatingElement>
-      <FloatingElement delay={1} duration={5} x={12} y={18} className="top-[20%] right-[8%]">
-        <Sparkle size={26} color="#5BA240" opacity={0.45} />
+      <FloatingElement delay={1.5} duration={7} x={8} y={12} className="bottom-[30%] left-[8%]">
+        <Leaf size={36} color="#5BA240" opacity={0.35} />
       </FloatingElement>
-      <FloatingElement delay={2} duration={7} x={8} y={12} className="bottom-[35%] left-[8%]">
-        <Leaf size={40} color="#5BA240" opacity={0.4} />
+      <FloatingElement delay={0.5} duration={5.5} x={10} y={15} className="top-[25%] right-[6%]">
+        <Sparkle size={22} color="#5BA240" opacity={0.4} />
       </FloatingElement>
-      <FloatingElement delay={0.5} duration={5.5} x={10} y={15} className="bottom-[25%] right-[10%]">
-        <Star size={24} color="#D62027" opacity={0.45} />
+      <FloatingElement delay={2} duration={6} x={12} y={14} className="bottom-[20%] right-[10%]">
+        <Star size={20} color="#D62027" opacity={0.35} />
       </FloatingElement>
-      <FloatingElement delay={1.5} duration={6.5} x={14} y={10} className="top-[45%] left-[3%]">
-        <Crescent size={30} color="#D62027" opacity={0.35} />
-      </FloatingElement>
-      <FloatingElement delay={2.5} duration={5} x={10} y={16} className="top-[55%] right-[5%]">
-        <Circle size={18} color="#5BA240" opacity={0.4} />
-      </FloatingElement>
-      <FloatingElement delay={3} duration={7} x={18} y={12} className="top-[30%] left-[12%]">
-        <Hexagon size={22} color="#5BA240" opacity={0.3} />
-      </FloatingElement>
-      <FloatingElement delay={0.8} duration={6} x={14} y={20} className="bottom-[15%] left-[15%]">
-        <Sparkle size={20} color="#D62027" opacity={0.4} />
-      </FloatingElement>
-      <FloatingElement delay={1.8} duration={5.5} x={10} y={14} className="top-[65%] right-[15%]">
-        <Diamond size={20} color="#5BA240" opacity={0.35} />
-      </FloatingElement>
-      <FloatingElement delay={2.2} duration={8} x={16} y={18} className="bottom-[40%] right-[3%]">
-        <Star size={18} color="#D62027" opacity={0.35} />
-      </FloatingElement>
-      <FloatingElement delay={3.5} duration={6.5} x={8} y={10} className="top-[15%] left-[20%]">
-        <Ring size={26} color="#5BA240" opacity={0.3} />
-      </FloatingElement>
-      <FloatingElement delay={1.2} duration={7.5} x={12} y={16} className="bottom-[50%] left-[2%]">
-        <Pepper size={24} color="#D62027" opacity={0.3} />
+      <FloatingElement delay={1} duration={8} x={10} y={16} className="top-[50%] right-[4%]">
+        <Crescent size={24} color="#D62027" opacity={0.3} />
       </FloatingElement>
     </div>
   );
