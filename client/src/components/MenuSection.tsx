@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { MenuFloatingElements } from "@/components/FloatingElements";
 
@@ -551,23 +552,66 @@ function MenuCard({ item, index, language }: MenuCardProps) {
   );
 }
 
+const categories = [
+  { key: "sandwiches", labelEn: "Sandwiches", labelIt: "Panini", noteEn: "+€0.50 for wrap", noteIt: "+€0,50 per il wrap" },
+  { key: "piattiUnici", labelEn: "Main Plates", labelIt: "Piatti Unici" },
+  { key: "piattiTipici", labelEn: "Traditional Dishes", labelIt: "Piatti Tipici" },
+  { key: "insalate", labelEn: "Salads", labelIt: "Insalate" },
+  { key: "riso", labelEn: "Rice Dishes", labelIt: "Riso" },
+  { key: "dolci", labelEn: "Desserts", labelIt: "Dolci" },
+  { key: "bevande", labelEn: "Drinks", labelIt: "Bevande" },
+];
+
 export function MenuSection() {
   const { t, language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [activeCategory, setActiveCategory] = useState(categories[0].key);
+  const [isNavSticky, setIsNavSticky] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+  const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  const categories = [
-    { key: "sandwiches", labelEn: "Sandwiches", labelIt: "Panini", noteEn: "+€0.50 for wrap", noteIt: "+€0,50 per il wrap" },
-    { key: "piattiUnici", labelEn: "Main Plates", labelIt: "Piatti Unici" },
-    { key: "piattiTipici", labelEn: "Traditional Dishes", labelIt: "Piatti Tipici" },
-    { key: "insalate", labelEn: "Salads", labelIt: "Insalate" },
-    { key: "riso", labelEn: "Rice Dishes", labelIt: "Riso" },
-    { key: "dolci", labelEn: "Desserts", labelIt: "Dolci" },
-    { key: "bevande", labelEn: "Drinks", labelIt: "Bevande" },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      if (navRef.current) {
+        const navTop = navRef.current.getBoundingClientRect().top;
+        setIsNavSticky(navTop <= 80);
+      }
+
+      const viewportCenter = window.innerHeight / 3;
+      
+      for (let i = categories.length - 1; i >= 0; i--) {
+        const category = categories[i];
+        const element = categoryRefs.current[category.key];
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= viewportCenter) {
+            setActiveCategory(category.key);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToCategory = (categoryKey: string) => {
+    const element = categoryRefs.current[categoryKey];
+    if (element) {
+      const offset = 140;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
+      setActiveCategory(categoryKey);
+    }
+  };
 
   return (
-    <section id="menu" className="py-16 md:py-24 bg-background relative overflow-hidden">
+    <section id="menu" className="py-16 md:py-24 bg-background relative overflow-x-clip">
       <MenuFloatingElements />
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <motion.div
@@ -575,7 +619,7 @@ export function MenuSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-8 md:mb-12"
         >
           <h2 
             className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4"
@@ -591,6 +635,38 @@ export function MenuSection() {
           </p>
         </motion.div>
 
+        <div 
+          ref={navRef}
+          className={`sticky top-[72px] z-40 -mx-4 md:-mx-8 px-4 md:px-8 py-4 mb-8 transition-all duration-300 ${
+            isNavSticky ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
+          }`}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide"
+            data-testid="nav-menu-categories"
+          >
+            {categories.map((category) => (
+              <Button
+                key={category.key}
+                variant={activeCategory === category.key ? "default" : "outline"}
+                size="sm"
+                onClick={() => scrollToCategory(category.key)}
+                className={`whitespace-nowrap flex-shrink-0 transition-all duration-200 ${
+                  activeCategory === category.key 
+                    ? "shadow-md" 
+                    : "hover:bg-primary/10"
+                }`}
+                data-testid={`button-category-${category.key}`}
+              >
+                {language === "en" ? category.labelEn : category.labelIt}
+              </Button>
+            ))}
+          </motion.div>
+        </div>
+
         {categories.map((category, categoryIndex) => {
           const categoryItems = menuItems.filter(
             (item) => item.category === category.key
@@ -598,7 +674,12 @@ export function MenuSection() {
           if (categoryItems.length === 0) return null;
 
           return (
-            <div key={category.key} className="mb-16 last:mb-0">
+            <div 
+              key={category.key} 
+              id={`menu-${category.key}`}
+              ref={(el) => { categoryRefs.current[category.key] = el; }}
+              className="mb-16 last:mb-0 scroll-mt-40"
+            >
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
