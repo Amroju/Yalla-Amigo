@@ -1,7 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
 import { Facebook, Instagram, Phone, MapPin, Clock } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
-import logoImage from "@assets/IMG_8316_1768488179238.png";
+import logoImage from "@assets/logoyalla-removebg-preview_1768488417787.png";
 
 export function Footer() {
   const { t, language } = useLanguage();

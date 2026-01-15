@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
-import logoImage from "@assets/IMG_8316_1768488179238.png";
+import logoImage from "@assets/logoyalla-removebg-preview_1768488417787.png";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,7 +53,7 @@ export function Header() {
             <img
               src={logoImage}
               alt="Yalla Amigo"
-              className="h-12 md:h-14 w-auto mix-blend-multiply dark:mix-blend-screen"
+              className="h-12 md:h-14 w-auto"
               data-testid="img-logo"
             />
           </ScrollLink>
