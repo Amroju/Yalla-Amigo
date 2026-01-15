@@ -74,13 +74,6 @@ export function OrderSection() {
           >
             <div className="absolute -inset-1 bg-white/20 rounded-lg blur-md" />
             <div className="relative bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-2xl">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-[#FFC244] rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-2xl font-bold text-[#00A082]">G</span>
-                </div>
-                <span className="text-white font-semibold text-xl">Glovo</span>
-              </div>
-              
               <a
                 href="https://glovoapp.com/it/it/verona/stores/yalla-amigo-ver"
                 target="_blank"
