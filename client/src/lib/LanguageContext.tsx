@@ -63,7 +63,7 @@ const translations: Record<Language, Record<string, string>> = {
     "order.delivery": "Fast Delivery Available",
     "instagram.title": "Follow Us",
     "instagram.subtitle": "Stay updated with our latest dishes and behind-the-scenes moments",
-    "instagram.follow": "Follow @yallaamigo_verona",
+    "instagram.follow": "Follow @yallaamigo.verona",
   },
   it: {
     "nav.home": "Home",
@@ -119,7 +119,7 @@ const translations: Record<Language, Record<string, string>> = {
     "order.delivery": "Consegna Veloce Disponibile",
     "instagram.title": "Seguici",
     "instagram.subtitle": "Resta aggiornato sui nostri ultimi piatti e momenti dietro le quinte",
-    "instagram.follow": "Segui @yallaamigo_verona",
+    "instagram.follow": "Segui @yallaamigo.verona",
   },
 };
 
