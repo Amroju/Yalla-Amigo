@@ -67,7 +67,7 @@ function FallbackGallery({ isInView }: { isInView: boolean }) {
         {instagramImages.map((image, index) => (
           <motion.a
             key={index}
-            href="https://www.instagram.com/yallaamigo_vr/"
+            href="https://www.instagram.com/yallaamigo_verona/"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -95,7 +95,7 @@ function FallbackGallery({ isInView }: { isInView: boolean }) {
         className="text-center"
       >
         <a
-          href="https://www.instagram.com/yallaamigo_vr/"
+          href="https://www.instagram.com/yallaamigo_verona/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -106,7 +106,7 @@ function FallbackGallery({ isInView }: { isInView: boolean }) {
             data-testid="button-instagram-follow"
           >
             <Instagram className="h-5 w-5" />
-            Follow @yallaamigo_vr
+            Follow @yallaamigo_verona
           </Button>
         </a>
       </motion.div>
