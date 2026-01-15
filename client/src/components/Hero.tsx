@@ -4,7 +4,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
-import heroImage from "@assets/IMG_6636_1768487668571.jpeg";
+import heroImage from "@assets/IMG_8313_1768487989358.jpeg";
 import logoImage from "@assets/yalla_amigo-removebg-preview_1768486710592.png";
 
 export function Hero() {
