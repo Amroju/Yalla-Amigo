@@ -26,6 +26,7 @@ interface MenuItem {
   nameIt: string;
   descriptionEn: string;
   descriptionIt: string;
+  price: string;
   image: string;
   category: string;
   popular?: boolean;
@@ -34,134 +35,243 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     id: "1",
-    nameEn: "Classic Chicken Shawarma",
-    nameIt: "Shawarma di Pollo Classico",
-    descriptionEn: "Tender marinated chicken, fresh vegetables, garlic sauce, wrapped in warm pita",
-    descriptionIt: "Pollo marinato tenero, verdure fresche, salsa all'aglio, avvolto in pita calda",
+    nameEn: "Chicken Shawarma",
+    nameIt: "Shawarma Pollo",
+    descriptionEn: "Garlic, Tahini, Red Cabbage, Onion",
+    descriptionIt: "Aglio, Tahina, Cappuccio Rosso, Cipolla",
+    price: "€6.50",
     image: shawarma1,
-    category: "wraps",
+    category: "sandwiches",
     popular: true,
   },
   {
     id: "2",
-    nameEn: "Beef Shawarma Deluxe",
-    nameIt: "Shawarma di Manzo Deluxe",
-    descriptionEn: "Premium beef slices, pickles, tahini, tomatoes in freshly baked bread",
-    descriptionIt: "Fette di manzo premium, sottaceti, tahini, pomodori in pane appena sfornato",
+    nameEn: "Lamb/Beef Shawarma",
+    nameIt: "Shawarma Agnello/Manzo",
+    descriptionEn: "Hummus, Tahini, Onion, Tomato",
+    descriptionIt: "Hummus, Tahina, Cipolla, Pomodoro",
+    price: "€8.50",
     image: shawarma2,
-    category: "wraps",
+    category: "sandwiches",
+    popular: true,
   },
   {
     id: "3",
-    nameEn: "Mixed Shawarma Special",
-    nameIt: "Shawarma Misto Speciale",
-    descriptionEn: "Best of both worlds with chicken and beef, hummus, fresh herbs",
-    descriptionIt: "Il meglio di entrambi con pollo e manzo, hummus, erbe fresche",
-    image: shawarma3,
-    category: "wraps",
-    popular: true,
+    nameEn: "Falafel Wrap",
+    nameIt: "Falafel",
+    descriptionEn: "Hummus, Tahini, Eggplant, Mixed Salad",
+    descriptionIt: "Hummus, Tahina, Melanzane, Insalata Mix",
+    price: "€5.90",
+    image: falafel2,
+    category: "sandwiches",
   },
   {
     id: "4",
-    nameEn: "Falafel Plate",
-    nameIt: "Piatto di Falafel",
-    descriptionEn: "Crispy homemade falafel, hummus, tahini, fresh salad, warm pita",
-    descriptionIt: "Falafel croccante fatto in casa, hummus, tahini, insalata fresca, pita calda",
-    image: falafel1,
-    category: "plates",
-    popular: true,
+    nameEn: "Halloumi",
+    nameIt: "Halloumi",
+    descriptionEn: "Avocado, Eggplant, Mixed Salad",
+    descriptionIt: "Avocado, Melanzane, Insalata Mix",
+    price: "€6.00",
+    image: shawarma3,
+    category: "sandwiches",
   },
   {
     id: "5",
-    nameEn: "Falafel Wrap",
-    nameIt: "Wrap di Falafel",
-    descriptionEn: "Golden falafel, creamy hummus, crunchy vegetables in lavash bread",
-    descriptionIt: "Falafel dorato, hummus cremoso, verdure croccanti in pane lavash",
-    image: falafel2,
-    category: "wraps",
+    nameEn: "Falafel & Halloumi",
+    nameIt: "Falafel & Halloumi",
+    descriptionEn: "Hummus, Avocado, Eggplant, Mixed Salad",
+    descriptionIt: "Hummus, Avocado, Melanzane, Insalata Mix",
+    price: "€6.90",
+    image: falafel1,
+    category: "sandwiches",
   },
   {
     id: "6",
-    nameEn: "Falafel Bowl",
-    nameIt: "Bowl di Falafel",
-    descriptionEn: "Falafel over rice, with grilled vegetables, tahini dressing",
-    descriptionIt: "Falafel su riso, con verdure grigliate, condimento tahini",
-    image: falafel3,
-    category: "plates",
+    nameEn: "Chicken Pizza (Fino)",
+    nameIt: "Pollo Pizza (Fino)",
+    descriptionEn: "Chicken, Cream, Mixed Peppers, Mushrooms, Black Olives, Mozzarella",
+    descriptionIt: "Pollo, Crema, Peperoni mix, Funghi, Oliva Nera, Mozzarella",
+    price: "€8.00",
+    image: kebab1,
+    category: "sandwiches",
   },
   {
     id: "7",
-    nameEn: "Hummus Classic",
-    nameIt: "Hummus Classico",
-    descriptionEn: "Creamy chickpea dip with olive oil, paprika, served with warm pita",
-    descriptionIt: "Crema di ceci con olio d'oliva, paprika, servito con pita calda",
-    image: hummus1,
-    category: "appetizers",
+    nameEn: "Philadelphia (Fino)",
+    nameIt: "Philadelphia (Fino)",
+    descriptionEn: "Beef, Onion, Mixed Peppers, Mozzarella, Mushrooms",
+    descriptionIt: "Manzo, Cipolla, Peperoni mix, Mozzarella, Funghi",
+    price: "€9.00",
+    image: kebab2,
+    category: "sandwiches",
   },
   {
     id: "8",
-    nameEn: "Hummus with Meat",
-    nameIt: "Hummus con Carne",
-    descriptionEn: "Our signature hummus topped with seasoned ground beef, pine nuts",
-    descriptionIt: "Il nostro hummus signature con carne macinata condita, pinoli",
-    image: hummus2,
-    category: "appetizers",
+    nameEn: "Special Chicken Shawarma",
+    nameIt: "Shawarma Special Pollo",
+    descriptionEn: "200g Chicken, Garlic, Tahini, Red Cabbage, Onion, Crunchy Pita",
+    descriptionIt: "200g Pollo, Aglio, Tahina, Cappuccio Rosso, Cipolla, Pita Crunchy",
+    price: "€9.90",
+    image: shawarma1,
+    category: "sandwiches",
     popular: true,
   },
   {
     id: "9",
-    nameEn: "Mixed Grill Platter",
-    nameIt: "Piatto Misto alla Griglia",
-    descriptionEn: "Assortment of grilled meats, kebabs, served with rice and grilled vegetables",
-    descriptionIt: "Assortimento di carni grigliate, kebab, servito con riso e verdure grigliate",
-    image: kebab1,
-    category: "plates",
+    nameEn: "Special Lamb/Beef Shawarma",
+    nameIt: "Shawarma Special Agnello/Manzo",
+    descriptionEn: "200g Lamb/Beef, Hummus, Tahini, Onion, Tomato, Crunchy Pita",
+    descriptionIt: "200g Agnello/Manzo, Hummus, Tahina, Cipolla, Pomodoro, Pita Crunchy",
+    price: "€11.90",
+    image: shawarma2,
+    category: "sandwiches",
     popular: true,
   },
   {
     id: "10",
-    nameEn: "Lamb Kebab",
-    nameIt: "Kebab di Agnello",
-    descriptionEn: "Tender lamb skewers, aromatic spices, served with fresh salad",
-    descriptionIt: "Spiedini di agnello tenero, spezie aromatiche, servito con insalata fresca",
-    image: kebab2,
-    category: "plates",
+    nameEn: "Chicken Plate",
+    nameIt: "Pollo",
+    descriptionEn: "Chicken, Hummus, Pickles, French Fries, Mixed Salad, Sesame Sauce, Bread",
+    descriptionIt: "Pollo, Hummus, Sottaceti, Patatine fritte, Insalata Mix, Salsa di Sesamo, Pane",
+    price: "€10.50",
+    image: kebab1,
+    category: "piattiUnici",
+    popular: true,
   },
   {
     id: "11",
-    nameEn: "Fattoush Salad",
-    nameIt: "Insalata Fattoush",
-    descriptionEn: "Fresh vegetables, crispy pita chips, sumac dressing",
-    descriptionIt: "Verdure fresche, pita croccante, condimento al sumac",
-    image: salad1,
-    category: "salads",
+    nameEn: "Lamb and Beef Plate",
+    nameIt: "Agnello e Manzo",
+    descriptionEn: "Beef, Hummus, Pickles, French Fries, Mixed Salad, Sesame Sauce, Bread",
+    descriptionIt: "Manzo, Hummus, Sottaceti, Patatine fritte, Insalata Mix, Salsa di Sesamo, Pane",
+    price: "€11.50",
+    image: kebab2,
+    category: "piattiUnici",
+    popular: true,
   },
   {
     id: "12",
-    nameEn: "Tabbouleh",
-    nameIt: "Tabulè",
-    descriptionEn: "Parsley, bulgur, tomatoes, mint, lemon-olive oil dressing",
-    descriptionIt: "Prezzemolo, bulgur, pomodori, menta, condimento limone-olio d'oliva",
-    image: salad2,
-    category: "salads",
+    nameEn: "Falafel & Halloumi Plate",
+    nameIt: "Falafel & Halloumi",
+    descriptionEn: "Halloumi (1 pc), Falafel (5 pcs), Hummus, Pickles, Avocado, Vegetables, Sesame Sauce, Bread",
+    descriptionIt: "Halloumi (1 pz), Falafel (5 pz), Hummus, Sottaceti, Avocado, Verdure, Salsa di Sesamo, Pane",
+    price: "€11.50",
+    image: falafel1,
+    category: "piattiUnici",
   },
   {
     id: "13",
+    nameEn: "Schnitzel",
+    nameIt: "Shnitzel",
+    descriptionEn: "Chicken Breast, Coleslaw Salad, Lemon, Garlic Sauce",
+    descriptionIt: "Petto di Pollo, Insalata Coleslaw, Limone, Salsa all'Aglio",
+    price: "€13.00",
+    image: kebab1,
+    category: "piattiUnici",
+  },
+  {
+    id: "14",
+    nameEn: "Hummus",
+    nameIt: "Hummus",
+    descriptionEn: "Chickpea hummus and bread",
+    descriptionIt: "Hummus di ceci e pane",
+    price: "€5.90",
+    image: hummus1,
+    category: "piattiTipici",
+    popular: true,
+  },
+  {
+    id: "15",
+    nameEn: "Hummus with Beef",
+    nameIt: "Hummus di manzo",
+    descriptionEn: "Chickpea hummus, beef and bread",
+    descriptionIt: "Hummus di ceci, manzo e pane",
+    price: "€8.90",
+    image: hummus2,
+    category: "piattiTipici",
+    popular: true,
+  },
+  {
+    id: "16",
+    nameEn: "Baba Ghanouge",
+    nameIt: "Baba Ghanouge",
+    descriptionEn: "Eggplant cream, Tahini, Mint, Bread",
+    descriptionIt: "Crema di melanzane, Tahina, Menta, Pane",
+    price: "€5.90",
+    image: pita,
+    category: "piattiTipici",
+  },
+  {
+    id: "17",
+    nameEn: "Muhammara",
+    nameIt: "Muhammara",
+    descriptionEn: "Pepper cream, walnuts and bread",
+    descriptionIt: "Crema di peperoni, noci e pane",
+    price: "€5.90",
+    image: hummus1,
+    category: "piattiTipici",
+  },
+  {
+    id: "18",
+    nameEn: "Mixed Typical Plates",
+    nameIt: "Mix piatti tipici",
+    descriptionEn: "Babaganoush, Hummus, Muhammara, Bread",
+    descriptionIt: "Babaganoush, Hummus, Muhammara, Pane",
+    price: "€8.00",
+    image: hummus2,
+    category: "piattiTipici",
+    popular: true,
+  },
+  {
+    id: "19",
+    nameEn: "Amigo Salad",
+    nameIt: "Amigo",
+    descriptionEn: "Crunchy Bread, Onion, Tomato, Cucumbers, Tahini, Yogurt, Lemon Juice",
+    descriptionIt: "Pane Croccante, Cipolla, Pomodoro, Cetrioli, Tahina, Yogurt, Succo di Limone",
+    price: "€6.00",
+    image: salad1,
+    category: "insalate",
+    popular: true,
+  },
+  {
+    id: "20",
+    nameEn: "Tabbouleh",
+    nameIt: "Tabbouleh",
+    descriptionEn: "Parsley, Tomato, Salad, Cucumbers, Onion, Mint, Bulgur",
+    descriptionIt: "Prezzemolo, Pomodoro, Insalata, Cetrioli, Cipolla, Menta, Bulgur",
+    price: "€6.00",
+    image: salad2,
+    category: "insalate",
+  },
+  {
+    id: "21",
+    nameEn: "Lentils and Chickpeas",
+    nameIt: "Lenticchie e Ceci",
+    descriptionEn: "Parsley, Tomato, Salad, Lentils, Chickpeas, Cucumbers, Onion, Mint, Bulgur",
+    descriptionIt: "Prezzemolo, Pomodoro, Insalata, Lenticchie, Ceci, Cetrioli, Cipolla, Menta, Bulgur",
+    price: "€5.90",
+    image: salad1,
+    category: "insalate",
+  },
+  {
+    id: "22",
+    nameEn: "Basbousa",
+    nameIt: "Basbousa",
+    descriptionEn: "Traditional Middle Eastern semolina cake",
+    descriptionIt: "Dolce tradizionale mediorientale alla semola",
+    price: "€2.00",
+    image: baklava,
+    category: "dolci",
+  },
+  {
+    id: "23",
     nameEn: "Baklava",
     nameIt: "Baklava",
     descriptionEn: "Layers of flaky phyllo, walnuts, pistachios, honey syrup",
     descriptionIt: "Strati di pasta fillo sfogliata, noci, pistacchi, sciroppo di miele",
+    price: "€2.00",
     image: baklava,
-    category: "desserts",
-  },
-  {
-    id: "14",
-    nameEn: "Fresh Pita Basket",
-    nameIt: "Cestino di Pita Fresca",
-    descriptionEn: "Freshly baked pita bread, perfect for sharing",
-    descriptionIt: "Pane pita appena sfornato, perfetto da condividere",
-    image: pita,
-    category: "appetizers",
+    category: "dolci",
   },
 ];
 
@@ -201,12 +311,20 @@ function MenuCard({ item, index, language }: MenuCardProps) {
           )}
         </div>
         <CardContent className="p-4">
-          <h3 
-            className="font-serif text-lg font-semibold mb-2 text-foreground"
-            data-testid={`text-menu-item-name-${item.id}`}
-          >
-            {language === "en" ? item.nameEn : item.nameIt}
-          </h3>
+          <div className="flex justify-between items-start gap-2 mb-2">
+            <h3 
+              className="font-serif text-lg font-semibold text-foreground"
+              data-testid={`text-menu-item-name-${item.id}`}
+            >
+              {language === "en" ? item.nameEn : item.nameIt}
+            </h3>
+            <span 
+              className="text-primary font-bold whitespace-nowrap"
+              data-testid={`text-menu-item-price-${item.id}`}
+            >
+              {item.price}
+            </span>
+          </div>
           <p 
             className="text-muted-foreground text-sm leading-relaxed"
             data-testid={`text-menu-item-description-${item.id}`}
@@ -225,11 +343,11 @@ export function MenuSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const categories = [
-    { key: "wraps", label: t("menu.category.wraps") },
-    { key: "plates", label: t("menu.category.plates") },
-    { key: "appetizers", label: t("menu.category.appetizers") },
-    { key: "salads", label: t("menu.category.salads") },
-    { key: "desserts", label: t("menu.category.desserts") },
+    { key: "sandwiches", labelEn: "Sandwiches & Wraps", labelIt: "Panini & Wraps" },
+    { key: "piattiUnici", labelEn: "Main Plates", labelIt: "Piatti Unici" },
+    { key: "piattiTipici", labelEn: "Traditional Dishes", labelIt: "Piatti Tipici" },
+    { key: "insalate", labelEn: "Salads", labelIt: "Insalate" },
+    { key: "dolci", labelEn: "Desserts", labelIt: "Dolci" },
   ];
 
   return (
@@ -271,7 +389,7 @@ export function MenuSection() {
                 className="text-2xl font-serif font-semibold mb-8 text-foreground border-l-4 border-primary pl-4"
                 data-testid={`text-category-${category.key}`}
               >
-                {category.label}
+                {language === "en" ? category.labelEn : category.labelIt}
               </motion.h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {categoryItems.map((item, index) => (

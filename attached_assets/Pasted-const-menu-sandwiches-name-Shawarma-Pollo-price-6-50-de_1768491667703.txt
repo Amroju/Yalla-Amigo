@@ -1,0 +1,59 @@
+const menu = {
+  sandwiches: [
+    { name: "Shawarma Pollo", price: "€6.50", description: "Aglio, Tahina, Cappuccio Rosso, Cipolla" },
+    { name: "Shawarma Agnello/Manzo", price: "€8.50", description: "Hummus, Tahina, Cipolla, Pomodoro" },
+    { name: "Falafel", price: "€5.90", description: "Hummus, Tahina, Melanzane, Insalata Mix" },
+    { name: "Halloumi", price: "€6.00", description: "Avocado, Melanzane, Insalata Mix" },
+    { name: "Falafel & Halloumi", price: "€6.90", description: "Hummus, Avocado, Melanzane, Insalata Mix" },
+    { name: "Pollo Pizza (Fino)", price: "€8.00", description: "Pollo, Crema, Peperoni mix, Funghi, Oliva Nera, Mozzarella" },
+    { name: "Philadelphia (Fino)", price: "€9.00", description: "Manzo, Cipolla, Peperoni mix, Mozzarella, Funghi" },
+    { name: "Arayes Kafta (4pz)", price: "€5.00", description: "Carne, Prezzemolo, Cipolla, Spizzi" },
+    { name: "Fahita (Fino)", price: "€9.00", description: "Pollo, Peperoni mix, Mais, Funghi, Mozzarella" },
+    { name: "Pollo Crispy (Fino)", price: "€8.00", description: "Pollo, Coleslaw salad, Cetrioli sotto Aceto, Patate" },
+    { name: "Shawarma Special Pollo", price: "€9.90", description: "200g Pollo, Aglio, Tahina, Cappuccio Rosso, Cipolla, Pita Crunchy" },
+    { name: "Shawarma Special Agnello/Manzo", price: "€11.90", description: "200g Agnello/Manzo, Hummus, Tahina, Cipolla, Pomodoro, Pita Crunchy" }
+  ],
+  piattiTipici: [
+    { name: "Hummus", price: "€5.90", description: "Hummus di ceci e pane" },
+    { name: "Hummus di manzo", price: "€8.90", description: "Hummus di ceci, manzo e pane" },
+    { name: "Avocado", price: "€7.00", description: "Avocado, Aglio, Peperoni verdi, Pomodoro, Succo di limone" },
+    { name: "Baba Ghanouge", price: "€5.90", description: "Crema di melanzane, Tahina, Menta, Pane" },
+    { name: "Foglie di vite", price: "€5.00", description: "Riso, Menta, Cipolla verde, Prezzemolo, Pomodori, Spizzi" },
+    { name: "Mtabal", price: "€5.90", description: "Melanzane, Pomodoro, Tahina, Yogurt, Aglio, Spizzi" },
+    { name: "Muhammara", price: "€5.90", description: "Crema di peperoni, noci e pane" },
+    { name: "Melanzane con ceci e pomodori", price: "€5.90", description: "Melanzane, Cipolla, Ceci, Pomodoro e Pane" },
+    { name: "Mix verdure fritte", price: "€8.00", description: "Melanzane, Cavolfiore, Patate, Piccante Verde" },
+    { name: "Msabbaha", price: "€5.90", description: "Hummus, Ceci, Salsa extra di sesamo" },
+    { name: "Mix piatti tipici", price: "€8.00", description: "Babaganoush, Hummus, Muhammara, Pane" }
+  ],
+  dolci: [
+    { name: "Basbousa", price: "€2.00" },
+    { name: "Baklava", price: "€2.00" }
+  ],
+  insalate: [
+    { name: "Amigo", price: "€6.00", description: "Pane Croccante, Cipolla, Pomodoro, Cetrioli, Tahina, Yogurt, Succo di Limone" },
+    { name: "Insalata di Rucola", price: "€6.00", description: "Rucola, Avocado, Melograno, Olio d’oliva, Succo di limone, Salsa di Melograno" },
+    { name: "Lenticchie e Ceci", price: "€5.90", description: "Prezzemolo, Pomodoro, Insalata, Lenticchie, Ceci, Cetrioli, Cipolla, Menta, Bulgur" },
+    { name: "Insalata Gazza", price: "€6.00", description: "Pomodoro, Cetrioli, Cipolla, Aneto Verde, Succo di Limone" },
+    { name: "Tabbouleh", price: "€6.00", description: "Prezzemolo, Pomodoro, Insalata, Cetrioli, Cipolla, Menta, Bulgur" }
+  ],
+  riso: [
+    { name: "Mejadara", price: "€5.50", description: "Riso, Lenticchie, Cipolle fritte" },
+    { name: "Riso con Verdure", price: "€5.50", description: "Riso, Verdure (Carote, Mais Piselli), Cipolla caramellata" },
+    { name: "Riso Piccante", price: "€5.50", description: "Riso, Carote, Cipolla caramellata, Piccante" },
+    { name: "Riso Bianco con Capelli d’Angelo", price: "€5.50", description: "Riso, Capelli d’Angelo" }
+  ],
+  bevande: [
+    { name: "Acqua", price: "€1.50" },
+    { name: "Bibita", price: "€2.50" },
+    { name: "Caffè", price: "€1.00" },
+    { name: "Thè/Menta", price: "€2.00" }
+  ],
+  piattiUnici: [
+    { name: "Pollo", price: "€10.50", description: "Pollo, Hummus, Sottaceti, Patatine fritte, Insalata Mix, Salsa di Sesamo, Pane" },
+    { name: "Agnello e Manzo", price: "€11.50", description: "Manzo, Hummus, Sottaceti, Patatine fritte, Insalata Mix, Salsa di Sesamo, Pane" },
+    { name: "Falafel & Halloumi", price: "€11.50", description: "Halloumi (1 pz), Falafel (5 pz), Hummus, Sottaceti, Avocado, Verdure, Salsa di Sesamo, Pane" },
+    { name: "Shnitzel", price: "€13.00", description: "Petto di Pollo, Insalata Coleslaw, Limone, Salsa all’Aglio" },
+    { name: "Nuggets & Patate", price: "€6.00", description: "Nuggets (4pz), Patate, Ketchup" } // دمج Menu Bimbi هنا
+  ]
+};
