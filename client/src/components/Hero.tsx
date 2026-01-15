@@ -141,36 +141,36 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-8 grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-3 md:gap-6 max-w-md sm:max-w-none mx-auto"
+          className="mt-8 flex flex-wrap justify-center gap-4 md:gap-6"
           data-testid="hero-info-strip"
         >
           <div 
-            className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-center"
+            className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
             data-testid="info-strip-rating"
           >
-            <Star className="h-4 w-4 text-yellow-400 fill-yellow-400 flex-shrink-0" />
-            <span className="text-white/90 text-xs sm:text-sm font-medium">{t("hero.rating")}</span>
+            <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+            <span className="text-white/90 text-sm font-medium">{t("hero.rating")}</span>
           </div>
           <div 
-            className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-center"
+            className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
             data-testid="info-strip-address"
           >
-            <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
-            <span className="text-white/90 text-xs sm:text-sm font-medium">{t("hero.address")}</span>
+            <MapPin className="h-4 w-4 text-primary" />
+            <span className="text-white/90 text-sm font-medium">{t("hero.address")}</span>
           </div>
           <div 
-            className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-center"
+            className="hidden sm:flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
             data-testid="info-strip-hours"
           >
-            <Clock className="h-4 w-4 text-secondary flex-shrink-0" />
-            <span className="text-white/90 text-xs sm:text-sm font-medium">{t("hero.hours")}</span>
+            <Clock className="h-4 w-4 text-secondary" />
+            <span className="text-white/90 text-sm font-medium">{t("hero.hours")}</span>
           </div>
           <div 
-            className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-center"
+            className="hidden sm:flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
             data-testid="info-strip-delivery"
           >
-            <Truck className="h-4 w-4 text-secondary flex-shrink-0" />
-            <span className="text-white/90 text-xs sm:text-sm font-medium">{t("hero.delivery")}</span>
+            <Truck className="h-4 w-4 text-secondary" />
+            <span className="text-white/90 text-sm font-medium">{t("hero.delivery")}</span>
           </div>
         </motion.div>
       </motion.div>

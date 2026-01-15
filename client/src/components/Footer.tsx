@@ -28,7 +28,16 @@ export function Footer() {
               {t("footer.tagline")}
             </p>
             <div className="flex gap-4 mt-6">
-    
+              <a
+                href="https://facebook.com/yallaamigoverona"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-background/10 rounded-md transition-colors"
+                data-testid="link-facebook"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
               <a
                 href="https://instagram.com/yallaamigo.verona"
                 target="_blank"
