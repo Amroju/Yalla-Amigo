@@ -468,26 +468,6 @@ const menuItems: MenuItem[] = [
     image: salad1,
     category: "bevande",
   },
-  {
-    id: "42",
-    nameEn: "Coffee",
-    nameIt: "Caffè",
-    descriptionEn: "Espresso coffee",
-    descriptionIt: "Caffè espresso",
-    price: "€1.00",
-    image: baklava,
-    category: "bevande",
-  },
-  {
-    id: "43",
-    nameEn: "Tea/Mint",
-    nameIt: "Thè/Menta",
-    descriptionEn: "Hot tea with fresh mint",
-    descriptionIt: "Tè caldo con menta fresca",
-    price: "€2.00",
-    image: pita,
-    category: "bevande",
-  },
 ];
 
 interface MenuCardProps {
