@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/lib/LanguageContext";
+import { SectionFloatingElements } from "@/components/SectionFloatingElements";
 
 import shawarma1 from "@assets/stock_images/shawarma_wrap_middle_ce6a63b6.jpg";
 import shawarma2 from "@assets/stock_images/shawarma_wrap_middle_9b7c859b.jpg";
@@ -546,8 +547,9 @@ export function MenuSection() {
   ];
 
   return (
-    <section id="menu" className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="menu" className="py-16 md:py-24 bg-background relative">
+      <SectionFloatingElements />
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}

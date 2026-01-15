@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/lib/LanguageContext";
+import { SectionFloatingElements } from "@/components/SectionFloatingElements";
 
 const openingHours = {
   en: [
@@ -34,8 +35,9 @@ export function AboutSection() {
   const hours = language === "en" ? openingHours.en : openingHours.it;
 
   return (
-    <section id="about" className="py-16 md:py-24 bg-muted/30">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="about" className="py-16 md:py-24 bg-muted/30 relative">
+      <SectionFloatingElements />
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
