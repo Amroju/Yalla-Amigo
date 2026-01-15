@@ -31,7 +31,7 @@ export function Hero() {
         <img
           src={heroImage}
           alt="Yalla Amigo Restaurant"
-          className="w-full h-full object-cover object-[70%_center] md:object-center"
+          className="w-full h-full object-cover object-[85%_center] md:object-center"
           data-testid="img-hero-background"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
