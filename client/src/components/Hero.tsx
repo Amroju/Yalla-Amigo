@@ -3,11 +3,9 @@ import { useRef } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { ChevronDown, Star, MapPin, Clock, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/lib/LanguageContext";
 import { HeroFloatingElements } from "@/components/FloatingElements";
 import heroImage from "@assets/IMG_8313_1768487989358.jpeg";
-import shawarmaImage from "@assets/stock_images/shawarma_wrap_middle_ce6a63b6.jpg";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -175,50 +173,6 @@ export function Hero() {
             <span className="text-white/90 text-sm font-medium">{t("hero.delivery")}</span>
           </div>
         </motion.div>
-      </motion.div>
-
-      {/* Featured Dish Card */}
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 1.4 }}
-        className="hidden lg:block absolute bottom-24 right-8 z-20"
-        data-testid="hero-featured-dish"
-      >
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 shadow-2xl">
-          <div className="flex items-center gap-3">
-            <div className="relative w-16 h-16 rounded-lg overflow-hidden">
-              <img 
-                src={shawarmaImage} 
-                alt="Shawarma" 
-                className="w-full h-full object-cover"
-                data-testid="img-featured-dish"
-              />
-            </div>
-            <div className="text-left">
-              <div className="flex items-center gap-2 mb-1">
-                <Badge 
-                  className="bg-primary/90 text-white text-xs"
-                  data-testid="badge-featured-popular"
-                >
-                  {t("hero.featured.popular")}
-                </Badge>
-              </div>
-              <h4 
-                className="text-white font-semibold text-sm"
-                data-testid="text-featured-name"
-              >
-                {t("hero.featured.name")}
-              </h4>
-              <p 
-                className="text-white/70 text-xs"
-                data-testid="text-featured-price"
-              >
-                {t("hero.featured.price")}
-              </p>
-            </div>
-          </div>
-        </div>
       </motion.div>
 
       <HeroFloatingElements />
