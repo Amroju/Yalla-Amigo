@@ -49,7 +49,7 @@ export function OrderSection() {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <a
-              href="https://deliveroo.it/en/menu/verona/verona-centro/yalla-amigo"
+              href="https://glovoapp.com/it/it/verona/stores/yalla-amigo-ver"
               target="_blank"
               rel="noopener noreferrer"
             >
