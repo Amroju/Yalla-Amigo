@@ -104,7 +104,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2 pl-6">
                 <span className="text-background/70" data-testid="text-hours-weekend">
-                  {language === "en" ? "Fri - Sat" : "Ven - Sab"}: 12:00 - 24:00
+                  {language === "en" ? "Fri - Sat" : "Ven - Sab"}: 12:00 - 23:30
                 </span>
               </div>
               <div className="flex items-center gap-2 pl-6">

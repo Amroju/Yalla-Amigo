@@ -11,8 +11,8 @@ const openingHours = {
     { day: "Tuesday", hours: "12:00 - 23:00" },
     { day: "Wednesday", hours: "12:00 - 23:00" },
     { day: "Thursday", hours: "12:00 - 23:00" },
-    { day: "Friday", hours: "12:00 - 24:00" },
-    { day: "Saturday", hours: "12:00 - 24:00" },
+    { day: "Friday", hours: "12:00 - 23:30" },
+    { day: "Saturday", hours: "12:00 - 23:30" },
     { day: "Sunday", hours: "12:00 - 22:00" },
   ],
   it: [
@@ -20,8 +20,8 @@ const openingHours = {
     { day: "Martedì", hours: "12:00 - 23:00" },
     { day: "Mercoledì", hours: "12:00 - 23:00" },
     { day: "Giovedì", hours: "12:00 - 23:00" },
-    { day: "Venerdì", hours: "12:00 - 24:00" },
-    { day: "Sabato", hours: "12:00 - 24:00" },
+    { day: "Venerdì", hours: "12:00 - 23:30" },
+    { day: "Sabato", hours: "12:00 - 23:30" },
     { day: "Domenica", hours: "12:00 - 22:00" },
   ],
 };
