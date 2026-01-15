@@ -5,7 +5,6 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import heroImage from "@assets/IMG_8313_1768487989358.jpeg";
-import logoImage from "@assets/logoyalla-removebg-preview_1768488417787.png";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -47,12 +46,13 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-6"
         >
-          <img
-            src={logoImage}
-            alt="Yalla Amigo Logo"
-            className="h-32 md:h-40 lg:h-48 mx-auto drop-shadow-2xl"
-            data-testid="img-hero-logo"
-          />
+          <h2 
+            className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold drop-shadow-2xl"
+            data-testid="text-hero-brand"
+          >
+            <span className="text-white">Yalla </span>
+            <span className="text-[#D62027]">Amigo</span>
+          </h2>
         </motion.div>
 
         <motion.p

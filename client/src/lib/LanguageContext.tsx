@@ -59,7 +59,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.about": "Info",
     "nav.reviews": "Recensioni",
     "nav.order": "Ordina Ora",
-    "hero.tagline": "Famoso in Tutto il Mondo",
+    "hero.tagline": "Un sapore che vale il viaggio",
     "hero.title": "Shawarma & Falafel",
     "hero.subtitle": "Sapori autentici del Medio Oriente preparati con passione e tradizione",
     "hero.cta": "Scopri il Menu",
