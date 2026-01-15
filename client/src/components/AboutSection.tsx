@@ -1,0 +1,153 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { MapPin, Phone, Clock } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/lib/LanguageContext";
+
+const openingHours = {
+  en: [
+    { day: "Monday", hours: "11:00 - 22:00" },
+    { day: "Tuesday", hours: "11:00 - 22:00" },
+    { day: "Wednesday", hours: "11:00 - 22:00" },
+    { day: "Thursday", hours: "11:00 - 22:00" },
+    { day: "Friday", hours: "11:00 - 23:00" },
+    { day: "Saturday", hours: "12:00 - 23:00" },
+    { day: "Sunday", hours: "Closed" },
+  ],
+  it: [
+    { day: "Lunedì", hours: "11:00 - 22:00" },
+    { day: "Martedì", hours: "11:00 - 22:00" },
+    { day: "Mercoledì", hours: "11:00 - 22:00" },
+    { day: "Giovedì", hours: "11:00 - 22:00" },
+    { day: "Venerdì", hours: "11:00 - 23:00" },
+    { day: "Sabato", hours: "12:00 - 23:00" },
+    { day: "Domenica", hours: "Chiuso" },
+  ],
+};
+
+export function AboutSection() {
+  const { t, language } = useLanguage();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const hours = language === "en" ? openingHours.en : openingHours.it;
+
+  return (
+    <section id="about" className="py-16 md:py-24 bg-muted/30">
+      <div className="container mx-auto px-4 md:px-8">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4">
+            {t("about.title")}
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            {t("about.subtitle")}
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative h-[300px] md:h-[400px] lg:h-full min-h-[300px] rounded-md overflow-hidden shadow-lg"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.1234567890123!2d9.188540315511234!3d45.464211179101234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzUxLjIiTiA5wrAxMScxOC43IkU!5e0!3m2!1sen!2sit!4v1234567890123!5m2!1sen!2sit"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Yalla Amigo Location"
+              className="absolute inset-0"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="space-y-6"
+          >
+            <Card className="overflow-hidden">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 rounded-md">
+                    <MapPin className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">{t("about.address")}</h3>
+                    <p className="text-muted-foreground">
+                      Via Example 123<br />
+                      20100 Milano, Italia
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 rounded-md">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">{t("about.phone")}</h3>
+                    <a
+                      href="tel:+39021234567"
+                      className="text-primary hover:underline text-lg font-medium"
+                      data-testid="link-phone"
+                    >
+                      +39 02 123 4567
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 rounded-md shrink-0">
+                    <Clock className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg mb-4">{t("about.hours")}</h3>
+                    <div className="space-y-2">
+                      {hours.map((schedule, index) => (
+                        <div
+                          key={index}
+                          className="flex justify-between items-center py-1 border-b border-border/50 last:border-0"
+                        >
+                          <span className="text-muted-foreground">{schedule.day}</span>
+                          <span
+                            className={`font-medium ${
+                              schedule.hours === "Closed" || schedule.hours === "Chiuso"
+                                ? "text-destructive"
+                                : "text-foreground"
+                            }`}
+                          >
+                            {schedule.hours}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
