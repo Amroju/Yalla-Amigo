@@ -13,7 +13,6 @@ interface Review {
   reviewEn: string;
   reviewIt: string;
   rating: number;
-  date: string;
   initials: string;
 }
 
@@ -22,60 +21,54 @@ const reviews: Review[] = [
     id: "1",
     nameEn: "Marco B.",
     nameIt: "Marco B.",
-    reviewEn: "The best shawarma I've ever had in Milan! The meat is perfectly seasoned and the portions are generous. Definitely coming back!",
-    reviewIt: "Il miglior shawarma che abbia mai mangiato a Milano! La carne è perfettamente condita e le porzioni sono generose. Tornerò sicuramente!",
+    reviewEn: "The best kebab in all of Verona! Generous portions, fresh ingredients, and incredibly flavorful. The staff is super friendly and the location in Piazza Cittadella is perfect.",
+    reviewIt: "Il miglior kebab di tutta Verona! Porzioni generose, ingredienti freschi e incredibilmente saporito. Lo staff è super gentile e la posizione in Piazza Cittadella è perfetta.",
     rating: 5,
-    date: "2024-01-15",
     initials: "MB",
   },
   {
     id: "2",
     nameEn: "Sarah L.",
     nameIt: "Sarah L.",
-    reviewEn: "Amazing falafel, crispy on the outside and perfectly soft inside. The hummus is incredibly creamy. A must-try for anyone who loves Middle Eastern food!",
-    reviewIt: "Falafel incredibile, croccante fuori e perfettamente morbido dentro. L'hummus è incredibilmente cremoso. Da provare per chiunque ami il cibo mediorientale!",
+    reviewEn: "Amazing falafel and hummus! Everything is prepared fresh daily. The chicken shawarma is juicy and perfectly spiced. A must-visit for anyone who loves authentic Middle Eastern cuisine.",
+    reviewIt: "Falafel e hummus fantastici! Tutto viene preparato fresco ogni giorno. Lo shawarma di pollo è succoso e perfettamente speziato. Da visitare per chi ama la cucina mediorientale autentica.",
     rating: 5,
-    date: "2024-01-10",
     initials: "SL",
   },
   {
     id: "3",
     nameEn: "Giuseppe R.",
     nameIt: "Giuseppe R.",
-    reviewEn: "Friendly staff, quick service, and delicious food. The mixed grill platter is perfect for sharing. Great value for money!",
-    reviewIt: "Staff cordiale, servizio veloce e cibo delizioso. Il piatto misto alla griglia è perfetto da condividere. Ottimo rapporto qualità-prezzo!",
+    reviewEn: "Excellent value for money! The piadina with shawarma is incredible. Quick service even when busy, and the quality never drops. I come here at least once a week.",
+    reviewIt: "Ottimo rapporto qualità-prezzo! La piadina con shawarma è incredibile. Servizio veloce anche quando c'è fila, e la qualità non cala mai. Vengo qui almeno una volta a settimana.",
     rating: 5,
-    date: "2024-01-08",
     initials: "GR",
   },
   {
     id: "4",
     nameEn: "Elena M.",
     nameIt: "Elena M.",
-    reviewEn: "I ordered through Glovo and was impressed by how fresh everything was. The chicken shawarma was juicy and flavorful. Highly recommend!",
-    reviewIt: "Ho ordinato tramite Glovo e sono rimasta colpita da quanto fosse fresco tutto. Lo shawarma di pollo era succoso e saporito. Lo consiglio vivamente!",
+    reviewEn: "Finally authentic halal cuisine in Verona! The beef kebab is tender and flavorful. Great variety of sauces and the fresh vegetables make every bite perfect.",
+    reviewIt: "Finalmente cucina halal autentica a Verona! Il kebab di manzo è tenero e saporito. Grande varietà di salse e le verdure fresche rendono ogni morso perfetto.",
     rating: 5,
-    date: "2024-01-05",
     initials: "EM",
   },
   {
     id: "5",
     nameEn: "Alessandro P.",
     nameIt: "Alessandro P.",
-    reviewEn: "Authentic flavors that remind me of my travels to the Middle East. The baklava is the perfect way to end the meal!",
-    reviewIt: "Sapori autentici che mi ricordano i miei viaggi in Medio Oriente. La baklava è il modo perfetto per concludere il pasto!",
+    reviewEn: "Hidden gem in the heart of Verona! The mixed plate with falafel, hummus and shawarma is perfect for sharing. Authentic flavors that remind me of my travels to the Middle East.",
+    reviewIt: "Gioiello nascosto nel cuore di Verona! Il piatto misto con falafel, hummus e shawarma è perfetto da condividere. Sapori autentici che mi ricordano i miei viaggi in Medio Oriente.",
     rating: 5,
-    date: "2024-01-02",
     initials: "AP",
   },
   {
     id: "6",
     nameEn: "Francesca D.",
     nameIt: "Francesca D.",
-    reviewEn: "Great vegetarian options! The falafel plate and fattoush salad are now my go-to lunch. Fresh ingredients and wonderful spices.",
-    reviewIt: "Ottime opzioni vegetariane! Il piatto di falafel e l'insalata fattoush sono ora il mio pranzo preferito. Ingredienti freschi e spezie meravigliose.",
+    reviewEn: "Great vegetarian options! The falafel wrap is now my go-to lunch. Fresh ingredients, wonderful spices, and the staff always remembers my usual order. Highly recommend!",
+    reviewIt: "Ottime opzioni vegetariane! Il wrap di falafel è ora il mio pranzo preferito. Ingredienti freschi, spezie meravigliose, e lo staff ricorda sempre il mio ordine abituale. Consigliatissimo!",
     rating: 5,
-    date: "2023-12-28",
     initials: "FD",
   },
 ];
@@ -180,7 +173,7 @@ export function ReviewsSection() {
               ))}
             </div>
             <span className="text-muted-foreground">
-              5.0 - {t("reviews.google")}
+              4.9 - 1,748 {t("reviews.google")}
             </span>
           </div>
         </motion.div>

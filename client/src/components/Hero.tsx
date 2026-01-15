@@ -102,7 +102,7 @@ export function Hero() {
             </Button>
           </ScrollLink>
           <a
-            href="https://glovoapp.com/it/en/milano/yalla-amigo/"
+            href="https://deliveroo.it/en/menu/verona/verona-centro/yalla-amigo"
             target="_blank"
             rel="noopener noreferrer"
           >

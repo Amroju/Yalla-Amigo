@@ -39,7 +39,7 @@ export function FloatingOrderButton() {
           className="fixed bottom-6 right-6 z-40"
         >
           <a
-            href="https://glovoapp.com/it/en/milano/yalla-amigo/"
+            href="https://deliveroo.it/en/menu/verona/verona-centro/yalla-amigo"
             target="_blank"
             rel="noopener noreferrer"
           >

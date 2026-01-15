@@ -7,22 +7,22 @@ import { useLanguage } from "@/lib/LanguageContext";
 
 const openingHours = {
   en: [
-    { day: "Monday", hours: "11:00 - 22:00" },
-    { day: "Tuesday", hours: "11:00 - 22:00" },
-    { day: "Wednesday", hours: "11:00 - 22:00" },
-    { day: "Thursday", hours: "11:00 - 22:00" },
-    { day: "Friday", hours: "11:00 - 23:00" },
-    { day: "Saturday", hours: "12:00 - 23:00" },
-    { day: "Sunday", hours: "Closed" },
+    { day: "Monday", hours: "12:00 - 23:00" },
+    { day: "Tuesday", hours: "12:00 - 23:00" },
+    { day: "Wednesday", hours: "12:00 - 23:00" },
+    { day: "Thursday", hours: "12:00 - 23:00" },
+    { day: "Friday", hours: "12:00 - 24:00" },
+    { day: "Saturday", hours: "12:00 - 24:00" },
+    { day: "Sunday", hours: "12:00 - 22:00" },
   ],
   it: [
-    { day: "Lunedì", hours: "11:00 - 22:00" },
-    { day: "Martedì", hours: "11:00 - 22:00" },
-    { day: "Mercoledì", hours: "11:00 - 22:00" },
-    { day: "Giovedì", hours: "11:00 - 22:00" },
-    { day: "Venerdì", hours: "11:00 - 23:00" },
-    { day: "Sabato", hours: "12:00 - 23:00" },
-    { day: "Domenica", hours: "Chiuso" },
+    { day: "Lunedì", hours: "12:00 - 23:00" },
+    { day: "Martedì", hours: "12:00 - 23:00" },
+    { day: "Mercoledì", hours: "12:00 - 23:00" },
+    { day: "Giovedì", hours: "12:00 - 23:00" },
+    { day: "Venerdì", hours: "12:00 - 24:00" },
+    { day: "Sabato", hours: "12:00 - 24:00" },
+    { day: "Domenica", hours: "12:00 - 22:00" },
   ],
 };
 
@@ -66,7 +66,7 @@ export function AboutSection() {
             data-testid="container-google-maps"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.1234567890123!2d9.188540315511234!3d45.464211179101234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzUxLjIiTiA5wrAxMScxOC43IkU!5e0!3m2!1sen!2sit!4v1234567890123!5m2!1sen!2sit"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.0!2d10.9924!3d45.4385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fed249e6c55%3A0x7c06b4daebea3c41!2sYalla%20Amigo!5e0!3m2!1sit!2sit!4v1704067200000!5m2!1sit!2sit"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -102,8 +102,8 @@ export function AboutSection() {
                       className="text-muted-foreground"
                       data-testid="text-address-content"
                     >
-                      Via Example 123<br />
-                      20100 Milano, Italia
+                      Piazza Cittadella, 14<br />
+                      37122 Verona VR, Italia
                     </p>
                   </div>
                 </div>
@@ -124,11 +124,11 @@ export function AboutSection() {
                       {t("about.phone")}
                     </h3>
                     <a
-                      href="tel:+39021234567"
+                      href="tel:+390458030123"
                       className="text-primary text-lg font-medium"
                       data-testid="link-phone"
                     >
-                      +39 02 123 4567
+                      +39 045 803 0123
                     </a>
                   </div>
                 </div>
@@ -156,13 +156,7 @@ export function AboutSection() {
                           data-testid={`row-hours-${index}`}
                         >
                           <span className="text-muted-foreground">{schedule.day}</span>
-                          <span
-                            className={`font-medium ${
-                              schedule.hours === "Closed" || schedule.hours === "Chiuso"
-                                ? "text-destructive"
-                                : "text-foreground"
-                            }`}
-                          >
+                          <span className="font-medium text-foreground">
                             {schedule.hours}
                           </span>
                         </div>

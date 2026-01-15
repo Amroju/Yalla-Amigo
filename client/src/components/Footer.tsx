@@ -29,7 +29,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/yallaamigoverona"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-background/10 rounded-md transition-colors"
@@ -39,7 +39,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/yallaamigo.verona"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-background/10 rounded-md transition-colors"
@@ -76,18 +76,18 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <p className="text-background/70 text-sm" data-testid="text-footer-address">
-                  Via Example 123<br />
-                  20100 Milano, Italia
+                  Piazza Cittadella, 14<br />
+                  37122 Verona VR, Italia
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
                 <a
-                  href="tel:+39021234567"
+                  href="tel:+390458030123"
                   className="text-background/70 transition-colors text-sm"
                   data-testid="link-footer-phone"
                 >
-                  +39 02 123 4567
+                  +39 045 803 0123
                 </a>
               </div>
             </div>
@@ -99,17 +99,17 @@ export function Footer() {
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-primary shrink-0" />
                 <span className="text-background/70" data-testid="text-hours-weekday">
-                  {language === "en" ? "Mon - Thu" : "Lun - Gio"}: 11:00 - 22:00
+                  {language === "en" ? "Mon - Thu" : "Lun - Gio"}: 12:00 - 23:00
                 </span>
               </div>
               <div className="flex items-center gap-2 pl-6">
                 <span className="text-background/70" data-testid="text-hours-weekend">
-                  {language === "en" ? "Fri - Sat" : "Ven - Sab"}: 11:00 - 23:00
+                  {language === "en" ? "Fri - Sat" : "Ven - Sab"}: 12:00 - 24:00
                 </span>
               </div>
               <div className="flex items-center gap-2 pl-6">
                 <span className="text-background/70" data-testid="text-hours-sunday">
-                  {language === "en" ? "Sunday" : "Domenica"}: {t("about.closed")}
+                  {language === "en" ? "Sunday" : "Domenica"}: 12:00 - 22:00
                 </span>
               </div>
             </div>
