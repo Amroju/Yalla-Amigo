@@ -5,7 +5,6 @@ import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/lib/LanguageContext";
-import { SectionParallax3D } from "@/components/Parallax3DElements";
 
 interface Review {
   id: string;
@@ -143,9 +142,8 @@ export function ReviewsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-background relative">
-      <SectionParallax3D />
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <section id="reviews" className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}

@@ -11,7 +11,7 @@ import { ReviewsSection } from "@/components/ReviewsSection";
 import { OrderSection } from "@/components/OrderSection";
 import { Footer } from "@/components/Footer";
 import { FloatingOrderButton } from "@/components/FloatingOrderButton";
-import { Parallax3DElements } from "@/components/Parallax3DElements";
+import { FloatingElements } from "@/components/FloatingElements";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <TooltipProvider>
         <LanguageProvider>
           <div className="min-h-screen bg-background relative">
-            <Parallax3DElements />
+            <FloatingElements />
             <Header />
             <main>
               <Hero />

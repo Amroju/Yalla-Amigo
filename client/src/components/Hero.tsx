@@ -4,6 +4,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
+import { HeroFloatingElements } from "@/components/FloatingElements";
 import heroImage from "@assets/IMG_8313_1768487989358.jpeg";
 
 export function Hero() {
@@ -35,6 +36,8 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
       </motion.div>
+
+      <HeroFloatingElements />
 
       <motion.div
         style={{ opacity }}
