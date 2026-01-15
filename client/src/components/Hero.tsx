@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import heroImage from "@assets/IMG_8313_1768487989358.jpeg";
-import logoImage from "@assets/yalla_amigo-removebg-preview_1768486710592.png";
+import logoImage from "@assets/IMG_8316_1768488179238.png";
 
 export function Hero() {
   const { t } = useLanguage();

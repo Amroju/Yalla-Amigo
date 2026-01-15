@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
-import logoImage from "@assets/yalla_amigo-removebg-preview_1768486710592.png";
+import logoImage from "@assets/IMG_8316_1768488179238.png";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
