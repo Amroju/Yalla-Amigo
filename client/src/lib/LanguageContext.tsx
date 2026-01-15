@@ -60,7 +60,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.reviews": "Recensioni",
     "nav.order": "Ordina Ora",
     "hero.tagline": "Un sapore che vale il viaggio",
-    "hero.title": "Shawarma & Falafel",
+    "hero.title": " ",
     "hero.subtitle": "Sapori autentici del Medio Oriente preparati con passione e tradizione",
     "hero.cta": "Scopri il Menu",
     "hero.order": "Ordina su Glovo",
