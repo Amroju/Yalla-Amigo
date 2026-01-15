@@ -53,7 +53,7 @@ export function Header() {
             <img
               src={logoImage}
               alt="Yalla Amigo"
-              className="h-12 md:h-14 w-auto"
+              className="h-12 md:h-14 w-auto mix-blend-multiply dark:mix-blend-screen"
               data-testid="img-logo"
             />
           </ScrollLink>
