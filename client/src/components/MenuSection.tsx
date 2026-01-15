@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Star } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { MenuFloatingElements } from "@/components/FloatingElements";
 
@@ -498,9 +499,10 @@ function MenuCard({ item, index, language }: MenuCardProps) {
           />
           {item.popular && (
             <Badge
-              className="absolute top-3 right-3 bg-primary text-primary-foreground"
+              className="absolute top-3 right-3 bg-primary text-primary-foreground shadow-md"
               data-testid={`badge-popular-${item.id}`}
             >
+              <Star className="h-3 w-3 mr-1 fill-yellow-300 text-yellow-300" />
               Popular
             </Badge>
           )}
@@ -514,7 +516,7 @@ function MenuCard({ item, index, language }: MenuCardProps) {
               {language === "en" ? item.nameEn : item.nameIt}
             </h3>
             <span 
-              className="text-primary font-bold whitespace-nowrap"
+              className="text-primary font-bold whitespace-nowrap bg-primary/10 px-2 py-0.5 rounded-full text-sm"
               data-testid={`text-menu-item-price-${item.id}`}
             >
               {item.price}

@@ -52,6 +52,7 @@ const translations: Record<Language, Record<string, string>> = {
     "order.button": "Order on Glovo",
     "order.cta": "Hungry? Order Now!",
     "order.description": "Get your favorite dishes delivered to your door",
+    "order.delivery": "Fast Delivery Available",
   },
   it: {
     "nav.home": "Home",
@@ -96,6 +97,7 @@ const translations: Record<Language, Record<string, string>> = {
     "order.button": "Ordina su Glovo",
     "order.cta": "Hai Fame? Ordina Ora!",
     "order.description": "Ricevi i tuoi piatti preferiti a casa tua",
+    "order.delivery": "Consegna Veloce Disponibile",
   },
 };
 

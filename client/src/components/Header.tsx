@@ -6,6 +6,21 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import logoImage from "@assets/logoyalla-removebg-preview_1768488417787.png";
 
+function NavLink({ item, t }: { item: { key: string; to: string }; t: (key: string) => string }) {
+  return (
+    <ScrollLink
+      to={item.to}
+      smooth={true}
+      duration={500}
+      offset={-80}
+      className="text-foreground/80 font-medium cursor-pointer hover:text-foreground transition-colors py-1"
+      data-testid={`link-${item.to}`}
+    >
+      {t(item.key)}
+    </ScrollLink>
+  );
+}
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -60,17 +75,7 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <ScrollLink
-                key={item.key}
-                to={item.to}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className="text-foreground/80 font-medium cursor-pointer transition-colors"
-                data-testid={`link-${item.to}`}
-              >
-                {t(item.key)}
-              </ScrollLink>
+              <NavLink key={item.key} item={item} t={t} />
             ))}
           </div>
 

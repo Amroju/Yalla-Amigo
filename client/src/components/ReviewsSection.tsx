@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
+import { SiGoogle } from "react-icons/si";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -74,6 +75,39 @@ const reviews: Review[] = [
   },
 ];
 
+interface AnimatedStarsProps {
+  rating: number;
+  delay?: number;
+}
+
+function AnimatedStars({ rating, delay = 0 }: AnimatedStarsProps) {
+  return (
+    <div className="flex items-center gap-1">
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ 
+            duration: 0.3, 
+            delay: delay + i * 0.1,
+            type: "spring",
+            stiffness: 300
+          }}
+        >
+          <Star
+            className={`h-4 w-4 ${
+              i < rating
+                ? "text-yellow-500 fill-yellow-500"
+                : "text-muted"
+            }`}
+          />
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 interface ReviewCardProps {
   review: Review;
   index: number;
@@ -95,7 +129,7 @@ function ReviewCard({ review, index, language }: ReviewCardProps) {
       <Card className="h-full">
         <CardContent className="p-6">
           <div className="flex items-start gap-4 mb-4">
-            <Avatar className="h-12 w-12 bg-primary/10" data-testid={`avatar-reviewer-${review.id}`}>
+            <Avatar className="h-12 w-12 bg-primary/10 ring-2 ring-primary/20" data-testid={`avatar-reviewer-${review.id}`}>
               <AvatarFallback className="bg-primary/10 text-primary font-semibold">
                 {review.initials}
               </AvatarFallback>
@@ -107,20 +141,8 @@ function ReviewCard({ review, index, language }: ReviewCardProps) {
               >
                 {language === "en" ? review.nameEn : review.nameIt}
               </h4>
-              <div 
-                className="flex items-center gap-1 mt-1"
-                data-testid={`rating-stars-${review.id}`}
-              >
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`h-4 w-4 ${
-                      i < review.rating
-                        ? "text-yellow-500 fill-yellow-500"
-                        : "text-muted"
-                    }`}
-                  />
-                ))}
+              <div data-testid={`rating-stars-${review.id}`}>
+                {isInView && <AnimatedStars rating={review.rating} delay={index * 0.1 + 0.3} />}
               </div>
             </div>
             <Quote className="h-8 w-8 text-primary/20" />
@@ -165,19 +187,25 @@ export function ReviewsSection() {
           >
             {t("reviews.subtitle")}
           </p>
-          <div 
-            className="flex items-center justify-center gap-2 mt-4"
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="inline-flex items-center gap-3 mt-6 px-6 py-3 bg-card rounded-full shadow-md border"
             data-testid="rating-google-overall"
           >
+            <SiGoogle className="h-5 w-5 text-[#4285F4]" />
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+                <Star key={i} className="h-4 w-4 text-yellow-500 fill-yellow-500" />
               ))}
             </div>
-            <span className="text-muted-foreground">
-              4.9 - 1,748 {t("reviews.google")}
+            <span className="font-semibold text-foreground">4.9</span>
+            <span className="text-muted-foreground text-sm">
+              1,748 {t("reviews.google")}
             </span>
-          </div>
+          </motion.div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

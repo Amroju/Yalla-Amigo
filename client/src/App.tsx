@@ -11,6 +11,7 @@ import { ReviewsSection } from "@/components/ReviewsSection";
 import { OrderSection } from "@/components/OrderSection";
 import { Footer } from "@/components/Footer";
 import { FloatingOrderButton } from "@/components/FloatingOrderButton";
+import { BackToTop } from "@/components/BackToTop";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             </main>
             <Footer />
             <FloatingOrderButton />
+            <BackToTop />
           </div>
         </LanguageProvider>
         <Toaster />

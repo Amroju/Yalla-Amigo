@@ -35,6 +35,19 @@ export function Hero() {
           data-testid="img-hero-background"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#D62027]/20 via-transparent to-[#5BA240]/20" />
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%)"
+          }}
+        />
+        <div 
+          className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          }}
+        />
       </motion.div>
 
       <motion.div
@@ -48,11 +61,14 @@ export function Hero() {
           className="mb-6"
         >
           <h2 
-            className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold drop-shadow-2xl"
+            className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold tracking-tight"
+            style={{
+              textShadow: "0 4px 30px rgba(0,0,0,0.5), 0 2px 10px rgba(0,0,0,0.3)"
+            }}
             data-testid="text-hero-brand"
           >
             <span className="text-white">Yalla </span>
-            <span className="text-[#D62027]">Amigo</span>
+            <span className="text-[#D62027] drop-shadow-[0_0_30px_rgba(214,32,39,0.5)]">Amigo</span>
           </h2>
         </motion.div>
 
@@ -60,7 +76,8 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-white/90 text-lg md:text-xl font-medium tracking-wider uppercase mb-4"
+          className="text-white/90 text-lg md:text-xl font-medium tracking-[0.2em] uppercase mb-4"
+          style={{ textShadow: "0 2px 10px rgba(0,0,0,0.5)" }}
           data-testid="text-hero-tagline"
         >
           {t("hero.tagline")}
@@ -71,6 +88,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6"
+          style={{ textShadow: "0 4px 20px rgba(0,0,0,0.4)" }}
           data-testid="text-hero-title"
         >
           {t("hero.title")}
@@ -81,6 +99,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10"
+          style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}
           data-testid="text-hero-subtitle"
         >
           {t("hero.subtitle")}
@@ -96,7 +115,7 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/30 text-white min-w-[200px]"
+              className="bg-white/10 backdrop-blur-sm border-white/30 text-white min-w-[200px] shadow-lg"
               data-testid="button-explore-menu"
             >
               {t("hero.cta")}
@@ -109,7 +128,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="min-w-[200px]"
+              className="min-w-[200px] shadow-lg shadow-primary/30"
               data-testid="button-order-glovo-hero"
             >
               {t("hero.order")}
@@ -130,7 +149,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="cursor-pointer"
+            className="cursor-pointer p-2 rounded-full bg-white/10 backdrop-blur-sm"
             data-testid="button-scroll-down"
           >
             <ChevronDown className="h-8 w-8 text-white/70" />
