@@ -9,7 +9,7 @@
   --opaque-button-border-intensity: -8;
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
-  --background: 0 0% 100%;
+  --background: 0deg 0% 100%;
   --foreground: 0 0% 9%;
   --border: 0 0% 89%;
   --card: 0 0% 98%;
@@ -43,12 +43,12 @@
   --chart-3: 25 95% 53%;
   --chart-4: 47 88% 63%;
   --chart-5: 142 42% 58%;
-  --font-sans: 'Roboto', sans-serif;
+  --font-sans: 'IBM Plex Sans', sans-serif;
   --font-serif: 'Merriweather', serif;
-  --font-mono: 'Menlo', monospace;
+  --font-mono: 'PT Serif', serif;
   --brand-red: 357 82% 49%;
   --brand-green: 103 47% 48%;
-  --radius: .5rem;
+  --radius: 0.5rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
