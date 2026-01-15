@@ -49,7 +49,7 @@ const menuItems: MenuItem[] = [
     id: "2",
     nameEn: "Lamb/Beef Shawarma",
     nameIt: "Shawarma Agnello/Manzo",
-    descriptionEn: "Hummus, Tahini, Onion, Tomato",
+    descriptionEn: "Hummus, Tahini, Onion, Tomato.",
     descriptionIt: "Hummus, Tahina, Cipolla, Pomodoro",
     price: "€8.50",
     image: shawarma2,
@@ -58,7 +58,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: "3",
-    nameEn: "Falafel Wrap",
+    nameEn: "Falafel",
     nameIt: "Falafel",
     descriptionEn: "Hummus, Tahini, Eggplant, Mixed Salad",
     descriptionIt: "Hummus, Tahina, Melanzane, Insalata Mix",
@@ -556,7 +556,7 @@ export function MenuSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const categories = [
-    { key: "sandwiches", labelEn: "Sandwiches & Wraps", labelIt: "Panini & Wraps" },
+    { key: "sandwiches", labelEn: "Sandwiches", labelIt: "Panini", noteEn: "+€0.50 for wrap", noteIt: "+€0,50 per il wrap" },
     { key: "piattiUnici", labelEn: "Main Plates", labelIt: "Piatti Unici" },
     { key: "piattiTipici", labelEn: "Traditional Dishes", labelIt: "Piatti Tipici" },
     { key: "insalate", labelEn: "Salads", labelIt: "Insalate" },
@@ -597,15 +597,24 @@ export function MenuSection() {
 
           return (
             <div key={category.key} className="mb-16 last:mb-0">
-              <motion.h3
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-                className="text-2xl font-serif font-semibold mb-8 text-foreground border-l-4 border-primary pl-4"
-                data-testid={`text-category-${category.key}`}
+                className="mb-8 border-l-4 border-primary pl-4"
               >
-                {language === "en" ? category.labelEn : category.labelIt}
-              </motion.h3>
+                <h3 
+                  className="text-2xl font-serif font-semibold text-foreground"
+                  data-testid={`text-category-${category.key}`}
+                >
+                  {language === "en" ? category.labelEn : category.labelIt}
+                </h3>
+                {(category.noteEn || category.noteIt) && (
+                  <p className="text-sm text-muted-foreground mt-1 italic">
+                    {language === "en" ? category.noteEn : category.noteIt}
+                  </p>
+                )}
+              </motion.div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {categoryItems.map((item, index) => (
                   <MenuCard
