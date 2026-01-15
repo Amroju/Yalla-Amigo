@@ -10,6 +10,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { OrderSection } from "@/components/OrderSection";
 import { Footer } from "@/components/Footer";
+import { InstagramSection } from "@/components/InstagramSection";
 import { FloatingOrderButton } from "@/components/FloatingOrderButton";
 import { BackToTop } from "@/components/BackToTop";
 
@@ -25,6 +26,7 @@ function App() {
               <MenuSection />
               <AboutSection />
               <ReviewsSection />
+              <InstagramSection />
               <OrderSection />
             </main>
             <Footer />

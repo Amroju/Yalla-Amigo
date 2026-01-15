@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Star, Leaf } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { MenuFloatingElements } from "@/components/FloatingElements";
 
@@ -33,6 +33,8 @@ interface MenuItem {
   image: string;
   category: string;
   popular?: boolean;
+  vegetarian?: boolean;
+  vegan?: boolean;
 }
 
 const menuItems: MenuItem[] = [
@@ -68,6 +70,7 @@ const menuItems: MenuItem[] = [
     price: "€5.90",
     image: falafel2,
     category: "sandwiches",
+    vegan: true,
   },
   {
     id: "4",
@@ -78,6 +81,7 @@ const menuItems: MenuItem[] = [
     price: "€6.00",
     image: shawarma3,
     category: "sandwiches",
+    vegetarian: true,
   },
   {
     id: "5",
@@ -88,6 +92,7 @@ const menuItems: MenuItem[] = [
     price: "€6.90",
     image: falafel1,
     category: "sandwiches",
+    vegetarian: true,
   },
   {
     id: "6",
@@ -194,6 +199,7 @@ const menuItems: MenuItem[] = [
     price: "€11.50",
     image: falafel1,
     category: "piattiUnici",
+    vegetarian: true,
   },
   {
     id: "16",
@@ -227,6 +233,7 @@ const menuItems: MenuItem[] = [
     image: hummus1,
     category: "piattiTipici",
     popular: true,
+    vegan: true,
   },
   {
     id: "19",
@@ -248,6 +255,7 @@ const menuItems: MenuItem[] = [
     price: "€7.00",
     image: salad1,
     category: "piattiTipici",
+    vegan: true,
   },
   {
     id: "21",
@@ -258,6 +266,7 @@ const menuItems: MenuItem[] = [
     price: "€5.90",
     image: hummus1,
     category: "piattiTipici",
+    vegan: true,
   },
   {
     id: "22",
@@ -268,6 +277,7 @@ const menuItems: MenuItem[] = [
     price: "€5.00",
     image: pita,
     category: "piattiTipici",
+    vegan: true,
   },
   {
     id: "23",
@@ -288,6 +298,7 @@ const menuItems: MenuItem[] = [
     price: "€5.90",
     image: hummus1,
     category: "piattiTipici",
+    vegan: true,
   },
   {
     id: "25",
@@ -298,6 +309,7 @@ const menuItems: MenuItem[] = [
     price: "€5.90",
     image: pita,
     category: "piattiTipici",
+    vegan: true,
   },
   {
     id: "26",
@@ -308,6 +320,7 @@ const menuItems: MenuItem[] = [
     price: "€8.00",
     image: falafel3,
     category: "piattiTipici",
+    vegan: true,
   },
   {
     id: "27",
@@ -318,6 +331,7 @@ const menuItems: MenuItem[] = [
     price: "€5.90",
     image: hummus2,
     category: "piattiTipici",
+    vegan: true,
   },
   {
     id: "28",
@@ -329,6 +343,7 @@ const menuItems: MenuItem[] = [
     image: hummus1,
     category: "piattiTipici",
     popular: true,
+    vegan: true,
   },
 
   // INSALATE
@@ -342,6 +357,7 @@ const menuItems: MenuItem[] = [
     image: salad1,
     category: "insalate",
     popular: true,
+    vegetarian: true,
   },
   {
     id: "30",
@@ -352,6 +368,7 @@ const menuItems: MenuItem[] = [
     price: "€6.00",
     image: salad2,
     category: "insalate",
+    vegan: true,
   },
   {
     id: "31",
@@ -362,6 +379,7 @@ const menuItems: MenuItem[] = [
     price: "€5.90",
     image: salad1,
     category: "insalate",
+    vegan: true,
   },
   {
     id: "32",
@@ -372,6 +390,7 @@ const menuItems: MenuItem[] = [
     price: "€6.00",
     image: salad2,
     category: "insalate",
+    vegan: true,
   },
   {
     id: "33",
@@ -382,6 +401,7 @@ const menuItems: MenuItem[] = [
     price: "€6.00",
     image: salad1,
     category: "insalate",
+    vegan: true,
   },
 
   // RISO
@@ -394,6 +414,7 @@ const menuItems: MenuItem[] = [
     price: "€5.50",
     image: falafel3,
     category: "riso",
+    vegan: true,
   },
   {
     id: "35",
@@ -404,6 +425,7 @@ const menuItems: MenuItem[] = [
     price: "€5.50",
     image: falafel1,
     category: "riso",
+    vegan: true,
   },
   {
     id: "36",
@@ -414,6 +436,7 @@ const menuItems: MenuItem[] = [
     price: "€5.50",
     image: falafel2,
     category: "riso",
+    vegan: true,
   },
   {
     id: "37",
@@ -424,6 +447,7 @@ const menuItems: MenuItem[] = [
     price: "€5.50",
     image: pita,
     category: "riso",
+    vegan: true,
   },
 
   // DOLCI
@@ -528,6 +552,30 @@ function MenuCard({ item, index, language }: MenuCardProps) {
           >
             {language === "en" ? item.descriptionEn : item.descriptionIt}
           </p>
+          {(item.vegan || item.vegetarian) && (
+            <div className="flex gap-2 mt-3" data-testid={`dietary-badges-${item.id}`}>
+              {item.vegan && (
+                <Badge 
+                  variant="outline" 
+                  className="text-xs border-secondary text-secondary bg-secondary/10"
+                  data-testid={`badge-vegan-${item.id}`}
+                >
+                  <Leaf className="h-3 w-3 mr-1" />
+                  Vegan
+                </Badge>
+              )}
+              {item.vegetarian && !item.vegan && (
+                <Badge 
+                  variant="outline" 
+                  className="text-xs border-secondary text-secondary bg-secondary/10"
+                  data-testid={`badge-vegetarian-${item.id}`}
+                >
+                  <Leaf className="h-3 w-3 mr-1" />
+                  Vegetarian
+                </Badge>
+              )}
+            </div>
+          )}
         </CardContent>
       </Card>
     </motion.div>

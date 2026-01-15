@@ -181,8 +181,16 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
       >
+        <motion.span
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="text-white/70 text-sm font-medium tracking-wider uppercase"
+          data-testid="text-scroll-hint"
+        >
+          {t("hero.scroll")}
+        </motion.span>
         <ScrollLink to="menu" smooth={true} duration={500} offset={-80}>
           <motion.div
             animate={{ y: [0, 10, 0] }}

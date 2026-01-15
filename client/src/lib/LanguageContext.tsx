@@ -27,6 +27,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.featured.popular": "Popular",
     "hero.featured.name": "Classic Shawarma",
     "hero.featured.price": "€6.00",
+    "hero.scroll": "Scroll to explore",
     "menu.title": "Our Menu",
     "menu.subtitle": "Discover the rich flavors of tradition, prepared with authentic recipes passed down through generations",
     "menu.category.wraps": "Signature Wraps",
@@ -60,6 +61,9 @@ const translations: Record<Language, Record<string, string>> = {
     "order.cta": "Hungry? Order Now!",
     "order.description": "Get your favorite dishes delivered to your door",
     "order.delivery": "Fast Delivery Available",
+    "instagram.title": "Follow Us",
+    "instagram.subtitle": "Stay updated with our latest dishes and behind-the-scenes moments",
+    "instagram.follow": "Follow @yallaamigo_vr",
   },
   it: {
     "nav.home": "Home",
@@ -79,6 +83,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.featured.popular": "Popolare",
     "hero.featured.name": "Shawarma Classico",
     "hero.featured.price": "€6.00",
+    "hero.scroll": "Scorri per scoprire",
     "menu.title": "Il Nostro Menu",
     "menu.subtitle": "Scopri i ricchi sapori del tradizionale, preparati con ricette autentiche tramandate di generazione in generazione",
     "menu.category.wraps": "Panini",
@@ -112,6 +117,9 @@ const translations: Record<Language, Record<string, string>> = {
     "order.cta": "Hai Fame? Ordina Ora!",
     "order.description": "Ricevi i tuoi piatti preferiti a casa tua",
     "order.delivery": "Consegna Veloce Disponibile",
+    "instagram.title": "Seguici",
+    "instagram.subtitle": "Resta aggiornato sui nostri ultimi piatti e momenti dietro le quinte",
+    "instagram.follow": "Segui @yallaamigo_vr",
   },
 };
 
