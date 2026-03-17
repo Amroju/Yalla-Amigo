@@ -8,7 +8,7 @@ import { Star, Leaf } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { MenuFloatingElements } from "@/components/FloatingElements";
 
-import shawarma1 from "@assets/stock_images/shawarma_wrap_middle_ce6a63b6.jpg";
+import shawarma1 from "@assets/IMG_0135_1773765940849.jpeg";
 import shawarma2 from "@assets/stock_images/shawarma_wrap_middle_9b7c859b.jpg";
 import shawarma3 from "@assets/stock_images/shawarma_wrap_middle_889b938e.jpg";
 import falafel1 from "@assets/stock_images/falafel_plate_medite_962e0dd7.jpg";
@@ -104,26 +104,7 @@ const menuItems: MenuItem[] = [
     image: kebab1,
     category: "sandwiches",
   },
-  {
-    id: "7",
-    nameEn: "Philadelphia (Fino)",
-    nameIt: "Philadelphia (Fino)",
-    descriptionEn: "Beef, Onion, Mixed Peppers, Mozzarella, Mushrooms",
-    descriptionIt: "Manzo, Cipolla, Peperoni mix, Mozzarella, Funghi",
-    price: "€9.00",
-    image: kebab2,
-    category: "sandwiches",
-  },
-  {
-    id: "8",
-    nameEn: "Arayes Kafta (4pcs)",
-    nameIt: "Arayes Kafta (4pz)",
-    descriptionEn: "Meat, Parsley, Onion, Spices",
-    descriptionIt: "Carne, Prezzemolo, Cipolla, Spizzi",
-    price: "€5.00",
-    image: pita,
-    category: "sandwiches",
-  },
+
   {
     id: "9",
     nameEn: "Fajita (Fino)",
@@ -202,19 +183,9 @@ const menuItems: MenuItem[] = [
     vegetarian: true,
   },
   {
-    id: "16",
-    nameEn: "Schnitzel",
-    nameIt: "Shnitzel",
-    descriptionEn: "Chicken Breast, Coleslaw Salad, Lemon, Garlic Sauce",
-    descriptionIt: "Petto di Pollo, Insalata Coleslaw, Limone, Salsa all'Aglio",
-    price: "€13.00",
-    image: kebab1,
-    category: "piattiUnici",
-  },
-  {
     id: "17",
-    nameEn: "Nuggets & Fries",
-    nameIt: "Nuggets & Patate",
+    nameEn: "Kids Menu",
+    nameIt: "Menù Bimbi",
     descriptionEn: "Nuggets (4pcs), Fries, Ketchup",
     descriptionIt: "Nuggets (4pz), Patate, Ketchup",
     price: "€6.00",
