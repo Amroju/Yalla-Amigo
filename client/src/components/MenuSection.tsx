@@ -50,7 +50,7 @@ const menuItems: MenuItem[] = [
     image: shawarma1,
     category: "sandwiches",
     popular: true,
-    imagePosition: "center 75%",
+    imagePosition: "center 85%",
   },
   {
     id: "2",
