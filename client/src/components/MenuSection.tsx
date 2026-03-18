@@ -10,6 +10,8 @@ import { MenuFloatingElements } from "@/components/FloatingElements";
 
 import shawarma1 from "@assets/IMG_0135_1773765940849.jpeg";
 import shawarma2 from "@assets/stock_images/shawarma_wrap_middle_9b7c859b.jpg";
+import beefShawarmaImg from "@assets/Beef_shawrma_1773859151190.jpeg";
+import hummusImg from "@assets/Hummus_1773859151190.jpeg";
 import shawarma3 from "@assets/stock_images/shawarma_wrap_middle_889b938e.jpg";
 import falafel1 from "@assets/stock_images/falafel_plate_medite_962e0dd7.jpg";
 import falafel2 from "@assets/stock_images/falafel_plate_medite_5ca0c0a6.jpg";
@@ -59,9 +61,10 @@ const menuItems: MenuItem[] = [
     descriptionEn: "Hummus, Tahini, Onion, Tomato.",
     descriptionIt: "Hummus, Tahina, Cipolla, Pomodoro",
     price: "€8.50",
-    image: shawarma2,
+    image: beefShawarmaImg,
     category: "sandwiches",
     popular: true,
+    imagePosition: "center 85%",
   },
   {
     id: "3",
@@ -203,10 +206,11 @@ const menuItems: MenuItem[] = [
     descriptionEn: "Chickpea hummus and bread",
     descriptionIt: "Hummus di ceci e pane",
     price: "€5.90",
-    image: hummus1,
+    image: hummusImg,
     category: "piattiTipici",
     popular: true,
     vegan: true,
+    imagePosition: "center 85%",
   },
   {
     id: "19",
