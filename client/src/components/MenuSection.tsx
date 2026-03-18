@@ -40,6 +40,17 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   // SANDWICHES
   {
+    id: "1",
+    nameEn: "Chicken Shawarma",
+    nameIt: "Shawarma Pollo",
+    descriptionEn: "Garlic, Tahini, Red Cabbage, Onion",
+    descriptionIt: "Aglio, Tahina, Cappuccio Rosso, Cipolla",
+    price: "€6.50",
+    image: shawarma1,
+    category: "sandwiches",
+    popular: true,
+  },
+  {
     id: "2",
     nameEn: "Lamb/Beef Shawarma",
     nameIt: "Shawarma Agnello/Manzo",
@@ -84,17 +95,6 @@ const menuItems: MenuItem[] = [
     vegetarian: true,
   },
   {
-    id: "1",
-    nameEn: "Chicken Shawarma",
-    nameIt: "Shawarma Pollo",
-    descriptionEn: "Garlic, Tahini, Red Cabbage, Onion",
-    descriptionIt: "Aglio, Tahina, Cappuccio Rosso, Cipolla",
-    price: "€6.50",
-    image: shawarma1,
-    category: "sandwiches",
-    popular: true,
-  },
-  {
     id: "6",
     nameEn: "Chicken Pizza (Fino)",
     nameIt: "Pollo Pizza (Fino)",
@@ -104,6 +104,7 @@ const menuItems: MenuItem[] = [
     image: kebab1,
     category: "sandwiches",
   },
+
   {
     id: "9",
     nameEn: "Fajita (Fino)",
