@@ -35,6 +35,7 @@ interface MenuItem {
   popular?: boolean;
   vegetarian?: boolean;
   vegan?: boolean;
+  imagePosition?: string;
 }
 
 const menuItems: MenuItem[] = [
@@ -49,6 +50,7 @@ const menuItems: MenuItem[] = [
     image: shawarma1,
     category: "sandwiches",
     popular: true,
+    imagePosition: "center 40%",
   },
   {
     id: "2",
@@ -490,6 +492,7 @@ function MenuCard({ item, index, language }: MenuCardProps) {
             src={item.image}
             alt={language === "en" ? item.nameEn : item.nameIt}
             className="w-full h-full object-cover"
+            style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined}
             data-testid={`img-menu-item-${item.id}`}
           />
           {item.popular && (
