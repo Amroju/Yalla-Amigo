@@ -66,7 +66,7 @@ import newInsalataAmigoImg from "@assets/Insalata Amigo.jpg";
 import newInsalataGazaImg from "@assets/Insalata Gaza.jpg";
 import newBaklavaImg from "@assets/Baklava.jpg";
 import newBasbousaImg from "@assets/Basbousa.jpg";
-import newWaterImg from "@assets/Water.jpg";
+import newWaterImg from "@assets/water.jpg";
 import newSoftDrinksImg from "@assets/Soft drinks.png";
 import newBoxChickenImg from "@assets/Box chicken.jpg";
 import newBoxManzoImg from "@assets/Box Manzo.jpg";
