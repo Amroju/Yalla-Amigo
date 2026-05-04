@@ -79,6 +79,7 @@ function FallbackGallery({ isInView }: { isInView: boolean }) {
             <img
               src={image.src}
               alt={image.alt}
+              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/30 flex items-center justify-center">

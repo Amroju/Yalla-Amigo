@@ -1,3 +1,4 @@
+import { Suspense, lazy } from "react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
@@ -5,16 +6,18 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { MenuSection } from "@/components/MenuSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ReviewsSection } from "@/components/ReviewsSection";
-import { OrderSection } from "@/components/OrderSection";
 import { Footer } from "@/components/Footer";
-import { InstagramSection } from "@/components/InstagramSection";
 import { FloatingOrderButton } from "@/components/FloatingOrderButton";
 import { BackToTop } from "@/components/BackToTop";
 import { HungerMeter } from "@/components/HungerMeter";
 import { MobileNav } from "@/components/MobileNav";
+
+// Lazy load heavy sections
+const MenuSection = lazy(() => import("@/components/MenuSection").then(module => ({ default: module.MenuSection })));
+const AboutSection = lazy(() => import("@/components/AboutSection").then(module => ({ default: module.AboutSection })));
+const ReviewsSection = lazy(() => import("@/components/ReviewsSection").then(module => ({ default: module.ReviewsSection })));
+const OrderSection = lazy(() => import("@/components/OrderSection").then(module => ({ default: module.OrderSection })));
+const InstagramSection = lazy(() => import("@/components/InstagramSection").then(module => ({ default: module.InstagramSection })));
 
 function App() {
   return (
@@ -25,11 +28,13 @@ function App() {
             <Header />
             <main style={{ paddingBottom: "80px" }}>
               <Hero />
-              <MenuSection />
-              <AboutSection />
-              <ReviewsSection />
-              <InstagramSection />
-              <OrderSection />
+              <Suspense fallback={<div className="h-40 flex items-center justify-center">Loading...</div>}>
+                <MenuSection />
+                <AboutSection />
+                <ReviewsSection />
+                <InstagramSection />
+                <OrderSection />
+              </Suspense>
             </main>
             <Footer />
             <FloatingOrderButton />

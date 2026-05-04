@@ -22,6 +22,7 @@ export function Footer() {
             <img
               src={logoImage}
               alt="Yalla Amigo"
+              loading="lazy"
               className="h-20 w-auto mb-4"
               data-testid="img-footer-logo"
             />

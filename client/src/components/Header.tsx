@@ -28,13 +28,13 @@ function LanguageDropdown({ isMobile = false }: { isMobile?: boolean }) {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setLanguage('en' as any)} className={language === 'en' ? 'bg-primary/10 flex gap-2 items-center' : 'flex gap-2 items-center'}>
-          <img src="https://flagcdn.com/w20/gb.png" srcSet="https://flagcdn.com/w40/gb.png 2x" width="20" alt="English" className="rounded-sm shadow-sm" /> English
+          <img src="https://flagcdn.com/w20/gb.png" srcSet="https://flagcdn.com/w40/gb.png 2x" width="20" alt="English" loading="lazy" className="rounded-sm shadow-sm" /> English
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setLanguage('it' as any)} className={language === 'it' ? 'bg-primary/10 flex gap-2 items-center' : 'flex gap-2 items-center'}>
-          <img src="https://flagcdn.com/w20/it.png" srcSet="https://flagcdn.com/w40/it.png 2x" width="20" alt="Italiano" className="rounded-sm shadow-sm" /> Italiano
+          <img src="https://flagcdn.com/w20/it.png" srcSet="https://flagcdn.com/w40/it.png 2x" width="20" alt="Italiano" loading="lazy" className="rounded-sm shadow-sm" /> Italiano
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setLanguage('ar' as any)} className={language === 'ar' ? 'bg-primary/10 flex gap-2 items-center' : 'flex gap-2 items-center'}>
-          <img src="https://flagcdn.com/w20/ps.png" srcSet="https://flagcdn.com/w40/ps.png 2x" width="20" alt="العربية" className="rounded-sm shadow-sm" /> العربية
+          <img src="https://flagcdn.com/w20/ps.png" srcSet="https://flagcdn.com/w40/ps.png 2x" width="20" alt="العربية" loading="lazy" className="rounded-sm shadow-sm" /> العربية
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

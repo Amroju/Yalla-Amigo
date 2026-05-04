@@ -788,6 +788,7 @@ function MenuCard({ item, index, language, onClick }: MenuCardProps) {
           <img
             src={item.image}
             alt={language === "ar" ? (item.nameAr || item.nameEn) : language === "en" ? item.nameEn : item.nameIt}
+            loading="lazy"
             className="w-full h-full object-cover"
             style={{
               ...(item.imagePosition ? { objectPosition: item.imagePosition } : {}),
@@ -1124,6 +1125,7 @@ export function MenuSection() {
                 <img
                   src={selectedItem.image}
                   alt={language === "ar" ? (selectedItem.nameAr || selectedItem.nameEn) : language === "en" ? selectedItem.nameEn : selectedItem.nameIt}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   style={{
                     ...(selectedItem.imagePosition ? { objectPosition: selectedItem.imagePosition } : {}),
