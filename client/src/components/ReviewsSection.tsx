@@ -14,8 +14,10 @@ interface Review {
   nameIt: string;
   reviewEn: string;
   reviewIt: string;
+  reviewAr?: string;
   rating: number;
   initials: string;
+  nameAr?: string;
 }
 
 const reviews: Review[] = [
@@ -23,8 +25,10 @@ const reviews: Review[] = [
     id: "1",
     nameEn: "Marco B.",
     nameIt: "Marco B.",
+    nameAr: "ماركو ب.",
     reviewEn: "The best kebab in all of Verona! Generous portions, fresh ingredients, and incredibly flavorful. The staff is super friendly and the location in Piazza Cittadella is perfect.",
     reviewIt: "Il miglior kebab di tutta Verona! Porzioni generose, ingredienti freschi e incredibilmente saporito. Lo staff è super gentile e la posizione in Piazza Cittadella è perfetta.",
+    reviewAr: "أفضل شاورما في كل فيرونا! حصص كبيرة، مكونات طازجة، ونكهة لا تصدق. طاقم العمل ودود جداً والموقع في ساحة شيتاديلا مثالي.",
     rating: 5,
     initials: "MB",
   },
@@ -32,8 +36,10 @@ const reviews: Review[] = [
     id: "2",
     nameEn: "Sarah L.",
     nameIt: "Sarah L.",
+    nameAr: "سارة ل.",
     reviewEn: "Amazing falafel and hummus! Everything is prepared fresh daily. The chicken shawarma is juicy and perfectly spiced. A must-visit for anyone who loves authentic Middle Eastern cuisine.",
     reviewIt: "Falafel e hummus fantastici! Tutto viene preparato fresco ogni giorno. Lo shawarma di pollo è succoso e perfettamente speziato. Da visitare per chi ama la cucina mediorientale autentica.",
+    reviewAr: "فلافل وحمص رائعين! كل شيء يحضر طازجاً يومياً. شاورما الدجاج طرية ومتبلة بشكل مثالي. مكان لا بد من زيارته لأي شخص يحب الأكل الشرق أوسطي الأصيل.",
     rating: 5,
     initials: "SL",
   },
@@ -41,8 +47,10 @@ const reviews: Review[] = [
     id: "3",
     nameEn: "Giuseppe R.",
     nameIt: "Giuseppe R.",
+    nameAr: "جوزيبي ر.",
     reviewEn: "Excellent value for money! The piadina with shawarma is incredible. Quick service even when busy, and the quality never drops. I come here at least once a week.",
     reviewIt: "Ottimo rapporto qualità-prezzo! La piadina con shawarma è incredibile. Servizio veloce anche quando c'è fila, e la qualità non cala mai. Vengo qui almeno una volta a settimana.",
+    reviewAr: "قيمة ممتازة مقابل المال! سندويشات الشاورما لا تصدق. خدمة سريعة حتى في أوقات الازدحام، والجودة لا تنخفض أبداً. آتي إلى هنا مرة واحدة على الأقل في الأسبوع.",
     rating: 5,
     initials: "GR",
   },
@@ -50,8 +58,10 @@ const reviews: Review[] = [
     id: "4",
     nameEn: "Elena M.",
     nameIt: "Elena M.",
+    nameAr: "إيلينا م.",
     reviewEn: "Finally authentic halal cuisine in Verona! The beef kebab is tender and flavorful. Great variety of sauces and the fresh vegetables make every bite perfect.",
     reviewIt: "Finalmente cucina halal autentica a Verona! Il kebab di manzo è tenero e saporito. Grande varietà di salse e le verdure fresche rendono ogni morso perfetto.",
+    reviewAr: "أخيراً طعام حلال أصيل في فيرونا! شاورما اللحم طرية ولذيذة. تشكيلة رائعة من الصلصات والخضروات الطازجة تجعل كل قضمة مثالية.",
     rating: 5,
     initials: "EM",
   },
@@ -59,8 +69,10 @@ const reviews: Review[] = [
     id: "5",
     nameEn: "Alessandro P.",
     nameIt: "Alessandro P.",
+    nameAr: "أليساندرو ب.",
     reviewEn: "Hidden gem in the heart of Verona! The mixed plate with falafel, hummus and shawarma is perfect for sharing. Authentic flavors that remind me of my travels to the Middle East.",
     reviewIt: "Gioiello nascosto nel cuore di Verona! Il piatto misto con falafel, hummus e shawarma è perfetto da condividere. Sapori autentici che mi ricordano i miei viaggi in Medio Oriente.",
+    reviewAr: "جوهرة مخفية في قلب فيرونا! الطبق المشكل مع الفلافل والحمص والشاورما مثالي للمشاركة. نكهات أصيلة تذكرني برحلاتي إلى الشرق الأوسط.",
     rating: 5,
     initials: "AP",
   },
@@ -68,8 +80,10 @@ const reviews: Review[] = [
     id: "6",
     nameEn: "Francesca D.",
     nameIt: "Francesca D.",
+    nameAr: "فرانشيسكا د.",
     reviewEn: "Great vegetarian options! The falafel wrap is now my go-to lunch. Fresh ingredients, wonderful spices, and the staff always remembers my usual order. Highly recommend!",
     reviewIt: "Ottime opzioni vegetariane! Il wrap di falafel è ora il mio pranzo preferito. Ingredienti freschi, spezie meravigliose, e lo staff ricorda sempre il mio ordine abituale. Consigliatissimo!",
+    reviewAr: "خيارات نباتية رائعة! سندويش الفلافل هو غدائي المفضل الآن. مكونات طازجة، بهارات رائعة، والموظفون يتذكرون دائماً طلبي المعتاد. أوصي به بشدة!",
     rating: 5,
     initials: "FD",
   },
@@ -111,7 +125,7 @@ function AnimatedStars({ rating, delay = 0 }: AnimatedStarsProps) {
 interface ReviewCardProps {
   review: Review;
   index: number;
-  language: "en" | "it";
+  language: "en" | "it" | "ar";
 }
 
 function ReviewCard({ review, index, language }: ReviewCardProps) {
@@ -139,7 +153,7 @@ function ReviewCard({ review, index, language }: ReviewCardProps) {
                 className="font-semibold text-foreground"
                 data-testid={`text-reviewer-name-${review.id}`}
               >
-                {language === "en" ? review.nameEn : review.nameIt}
+                {language === "ar" ? (review.nameAr || review.nameEn) : language === "en" ? review.nameEn : review.nameIt}
               </h4>
               <div data-testid={`rating-stars-${review.id}`}>
                 {isInView && <AnimatedStars rating={review.rating} delay={index * 0.1 + 0.3} />}
@@ -151,7 +165,7 @@ function ReviewCard({ review, index, language }: ReviewCardProps) {
             className="text-muted-foreground leading-relaxed italic"
             data-testid={`text-review-content-${review.id}`}
           >
-            "{language === "en" ? review.reviewEn : review.reviewIt}"
+            "{language === "ar" ? (review.reviewAr || review.reviewEn) : language === "en" ? review.reviewEn : review.reviewIt}"
           </p>
         </CardContent>
       </Card>
@@ -203,7 +217,7 @@ export function ReviewsSection() {
             </div>
             <span className="font-semibold text-foreground">4.9</span>
             <span className="text-muted-foreground text-sm">
-              1,748 {t("reviews.google")}
+              {t("reviews.google")}
             </span>
           </motion.div>
         </motion.div>

@@ -156,25 +156,7 @@ function Spice({ size = 24, color = "#5BA240", opacity = 0.35 }: { size?: number
 }
 
 export function HeroFloatingElements() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-5">
-      <FloatingElement delay={0} duration={6} x={15} y={20} className="top-[15%] left-[5%]">
-        <Star size={28} color="#D62027" opacity={0.4} />
-      </FloatingElement>
-      <FloatingElement delay={1.5} duration={7} x={8} y={12} className="bottom-[30%] left-[8%]">
-        <Leaf size={36} color="#5BA240" opacity={0.35} />
-      </FloatingElement>
-      <FloatingElement delay={0.5} duration={5.5} x={10} y={15} className="top-[25%] right-[6%]">
-        <Sparkle size={22} color="#5BA240" opacity={0.4} />
-      </FloatingElement>
-      <FloatingElement delay={2} duration={6} x={12} y={14} className="bottom-[20%] right-[10%]">
-        <Star size={20} color="#D62027" opacity={0.35} />
-      </FloatingElement>
-      <FloatingElement delay={1} duration={8} x={10} y={16} className="top-[50%] right-[4%]">
-        <Crescent size={24} color="#D62027" opacity={0.3} />
-      </FloatingElement>
-    </div>
-  );
+  return null;
 }
 
 export function MenuFloatingElements() {

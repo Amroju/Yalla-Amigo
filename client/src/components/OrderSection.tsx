@@ -75,7 +75,7 @@ export function OrderSection() {
             <div className="absolute -inset-1 bg-white/20 rounded-lg blur-md" />
             <div className="relative bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-2xl">
               <a
-                href="https://glovoapp.com/it/it/verona/stores/yalla-amigo-ver"
+                href="https://glovoapp.com/it/it/verona/yalla-amigo-ver/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

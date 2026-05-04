@@ -1,5 +1,6 @@
 import { Link as ScrollLink } from "react-scroll";
 import { Facebook, Instagram, Phone, MapPin, Clock } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 import { useLanguage } from "@/lib/LanguageContext";
 import logoImage from "@assets/logoyalla-removebg-preview_1768488417787.png";
 
@@ -29,10 +30,10 @@ export function Footer() {
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://facebook.com/yallaamigoverona"
+                href="https://www.facebook.com/people/Yalla-Amigo/61587198166868/?sk=reels_tab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-background/10 rounded-md transition-colors"
+                className="p-2 bg-background/10 rounded-md transition-colors hover:bg-primary/20 hover:text-primary"
                 data-testid="link-facebook"
                 aria-label="Facebook"
               >
@@ -42,11 +43,21 @@ export function Footer() {
                 href="https://instagram.com/yallaamigo.verona"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-background/10 rounded-md transition-colors"
+                className="p-2 bg-background/10 rounded-md transition-colors hover:bg-primary/20 hover:text-primary"
                 data-testid="link-instagram"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@yallaamigo.verona"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-background/10 rounded-md transition-colors hover:bg-primary/20 hover:text-primary"
+                data-testid="link-tiktok"
+                aria-label="TikTok"
+              >
+                <FaTiktok className="h-5 w-5" />
               </a>
             </div>
           </div>

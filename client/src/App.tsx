@@ -13,6 +13,8 @@ import { Footer } from "@/components/Footer";
 import { InstagramSection } from "@/components/InstagramSection";
 import { FloatingOrderButton } from "@/components/FloatingOrderButton";
 import { BackToTop } from "@/components/BackToTop";
+import { HungerMeter } from "@/components/HungerMeter";
+import { MobileNav } from "@/components/MobileNav";
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
         <LanguageProvider>
           <div className="min-h-screen bg-background">
             <Header />
-            <main>
+            <main style={{ paddingBottom: "80px" }}>
               <Hero />
               <MenuSection />
               <AboutSection />
@@ -32,6 +34,8 @@ function App() {
             <Footer />
             <FloatingOrderButton />
             <BackToTop />
+            <HungerMeter />
+            <MobileNav />
           </div>
         </LanguageProvider>
         <Toaster />

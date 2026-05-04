@@ -1,11 +1,11 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { ChevronDown, Star, MapPin, Clock, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { HeroFloatingElements } from "@/components/FloatingElements";
-import heroImage from "@assets/IMG_8313_1768487989358.jpeg";
+import heroImage from "@assets/BackgroundHome.jpg";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -15,8 +15,14 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  const y = useTransform(smoothProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(smoothProgress, [0, 0.5], [1, 0]);
 
   return (
     <section
@@ -26,7 +32,7 @@ export function Hero() {
     >
       <motion.div
         className="absolute inset-0 z-0"
-        style={{ y }}
+        style={{ y, willChange: "transform" }}
       >
         <img
           src={heroImage}
@@ -34,7 +40,7 @@ export function Hero() {
           className="w-full h-full object-cover object-[50%_center] md:object-center"
           data-testid="img-hero-background"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/35 to-black/15" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#D62027]/20 via-transparent to-[#5BA240]/20" />
         <div 
           className="absolute inset-0 pointer-events-none"
@@ -115,14 +121,19 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/30 text-white min-w-[200px] shadow-lg"
+              className="hover:bg-white/10 min-w-[200px] shadow-lg"
+              style={{
+                background: "transparent",
+                border: "2px solid white",
+                color: "white"
+              }}
               data-testid="button-explore-menu"
             >
               {t("hero.cta")}
             </Button>
           </ScrollLink>
           <a
-            href="https://glovoapp.com/it/it/verona/stores/yalla-amigo-ver"
+            href="https://glovoapp.com/it/it/verona/yalla-amigo-ver/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -148,7 +159,7 @@ export function Hero() {
             className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
             data-testid="info-strip-rating"
           >
-            <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+            <Star className="h-4 w-4 text-primary fill-primary" />
             <span className="text-white/90 text-sm font-medium">{t("hero.rating")}</span>
           </div>
           <div 
@@ -184,9 +195,10 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
       >
         <motion.span
-          animate={{ opacity: [0.5, 1, 0.5] }}
+          animate={{ opacity: [0.3, 0.75, 0.3] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-white/70 text-sm font-medium tracking-wider uppercase"
+          className="text-white text-xs md:text-sm font-medium tracking-wider uppercase mb-2"
+          style={{ opacity: 0.75 }}
           data-testid="text-scroll-hint"
         >
           {t("hero.scroll")}
@@ -195,10 +207,10 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="cursor-pointer p-2 rounded-full bg-white/10 backdrop-blur-sm"
+            className="cursor-pointer p-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm transition-colors"
             data-testid="button-scroll-down"
           >
-            <ChevronDown className="h-8 w-8 text-white/70" />
+            <ChevronDown className="h-8 w-8 text-white" />
           </motion.div>
         </ScrollLink>
       </motion.div>
