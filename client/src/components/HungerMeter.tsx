@@ -204,14 +204,40 @@ export function HungerMeter() {
 
   // Show button only when #menu section is in view
   useEffect(() => {
-    const menuEl = document.getElementById("menu");
-    if (!menuEl) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setMenuVisible(entry.isIntersecting),
-      { threshold: 0.01 } // very low threshold so it works on all screen sizes
-    );
-    observer.observe(menuEl);
-    return () => observer.disconnect();
+    let observer: IntersectionObserver | null = null;
+    
+    const startObserving = () => {
+      const menuEl = document.getElementById("menu");
+      if (!menuEl) return false;
+      
+      observer = new IntersectionObserver(
+        ([entry]) => setMenuVisible(entry.isIntersecting),
+        { threshold: 0.01 }
+      );
+      observer.observe(menuEl);
+      return true;
+    };
+
+    // Try immediately
+    if (!startObserving()) {
+      // If not found (due to lazy loading), check every 500ms for a few seconds
+      const interval = setInterval(() => {
+        if (startObserving()) {
+          clearInterval(interval);
+        }
+      }, 500);
+      
+      // Cleanup after 10 seconds to avoid infinite checking if element never exists
+      const timeout = setTimeout(() => clearInterval(interval), 10000);
+      
+      return () => {
+        clearInterval(interval);
+        clearTimeout(timeout);
+        observer?.disconnect();
+      };
+    }
+
+    return () => observer?.disconnect();
   }, []);
 
   const handleAnswer = (tags: string[]) => {
